@@ -2,9 +2,8 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
@@ -36,4 +35,33 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * relationship to Role
+     *
+     * @return void
+     */
+    public function roles()
+    {
+        return $this
+            ->belongsToMany('App\Role')
+            ->withTimestamps();
+    }
+
+    /**
+     * gets role
+     *
+     * @param  mixed $role
+     *
+     * @return void
+     */
+    public function hasRole($role)
+    {
+        if ($this->roles()->where('name', $role)->first()) 
+        {
+            return true;
+        }
+
+        return false;
+    }
 }
