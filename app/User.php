@@ -49,7 +49,7 @@ class User extends Authenticatable
     }
 
     /**
-     * gets role
+     * checks role
      *
      * @param  mixed $role
      *

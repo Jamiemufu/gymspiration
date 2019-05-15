@@ -7,7 +7,7 @@ use Closure;
 class CheckRole
 {
     /**
-     * Handle an incoming request. check userrole
+     * Handle an incoming request. check user role
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next, $role

@@ -10662,6 +10662,71 @@ a.text-dark:focus {
   }
 }
 
+.nav-container {
+  position: absolute;
+  width: 200px;
+  min-height: 100vh;
+  z-index: 100;
+  background-color: #2E2A2E;
+  overflow: hidden;
+  transition: width 0.3s ease;
+  cursor: pointer;
+  box-shadow: 4px 7px 10px rgba(0, 0, 0, 0.4);
+}
+
+.nav {
+  list-style-type: none;
+  color: white;
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.nav-items {
+  padding-bottom: 4rem;
+}
+
+.nav-items img {
+  width: 100px;
+  display: block;
+}
+
+.nav-items a {
+  width: 200px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+  display: block;
+  padding-left: 50px;
+  padding-right: 15px;
+  transition: all 0.3s ease;
+  margin-right: 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: 100;
+  font-size: 1.35em;
+}
+
+.nav-items a i {
+  padding-right: 15px;
+}
+
+.nav-items .logo:hover {
+  background-color: #2E2A2E;
+}
+
+.nav-items a:hover {
+  opacity: 1;
+  background-color: #5f5fd4;
+}
+
+.nav-items a:active {
+  opacity: 1;
+  background-color: #5f5fd4;
+}
+
 .login {
   margin: auto;
   background: whitesmoke;
@@ -10753,26 +10818,28 @@ a.text-dark:focus {
   border: 1px solid #5f5fd4;
 }
 
+.login .button {
+  padding-bottom: 25px;
+}
+
 .login a {
   text-decoration: underline;
   color: #5f5fd4;
 }
 
 body {
-  margin: 0;
-  padding: 0;
   background: #5f5fd4;
   min-height: 100vh;
-  width: 100%;
-  overflow-y: hidden;
+  position: relative;
+}
+
+main {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-main {
-  width: 100%;
+  margin-left: 200px;
 }
 
 .flex-container {
@@ -10781,7 +10848,7 @@ main {
 
 button {
   background: #5f5fd4;
-  color: white;
+  color: whitesmoke;
   width: 150px;
   border: 0;
   border-radius: 5px;

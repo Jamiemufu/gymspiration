@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+//HomeController for users with member role
+
+
 class HomeController extends Controller
 {
     /**

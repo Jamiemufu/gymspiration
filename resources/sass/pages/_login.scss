@@ -2,7 +2,7 @@
 
 .login {
     margin: auto;
-    background: whitesmoke;
+    background: $base-bg;
     max-width: 500px;
     width: 90%;
     padding: 50px 10px;
@@ -42,8 +42,8 @@
             max-width: 450px;
             padding: 5px;
             outline: none;
-            border: 1px solid rgb(95, 95, 212);
-            background: whitesmoke;
+            border: 1px solid $base-color;
+            background: $base-bg;
         }
 
         button {
@@ -52,7 +52,7 @@
 
         span {
             padding: 15px 15px 25px 15px;
-            color: rgb(95, 95, 212);
+            color: $base-color;
         }
     }
 
@@ -86,13 +86,17 @@
             height: 20px;
             margin-bottom: 7px;
             outline: none;
-            border: 1px solid rgb(95, 95, 212);
+            border: 1px solid $base-color;
         }
+    }
+
+    .button {
+        padding-bottom: 25px;
     }
 
     a {
         text-decoration: underline;
-        color: rgb(95, 95, 212);
+        color: $base-color;
     }
 
 }

@@ -40,17 +40,11 @@
             <div class="checkbox">
                 <input name="remember" type="checkbox" {{ old('remember') ? 'checked' : '' }}>
                 <label for="remember" class="remember">Remember me?</label>
-            </div>
+            </div>           
 
-            @if (Route::has('password.request'))
-            <div class="forgot">
-                <a href="{{ route('password.request') }}">
-                   Forgot your password?
-                </a>
+            <div class="button">
+                <button type="submit">Login</button>
             </div>
-            @endif
-
-            <button>Login</button>
 
         </form>
     </div>
