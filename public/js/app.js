@@ -36921,8 +36921,8 @@ if (token) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/jamieevans/Documents/gymspiration/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/jamieevans/Documents/gymspiration/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\Web_Dev\gym\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\Web_Dev\gym\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

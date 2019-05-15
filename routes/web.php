@@ -29,7 +29,9 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 //admin only routes
 Route::get('/admin', 'AdminController@index')->name('admin');
 Route::get('/admin/members/', 'AdminController@members')->name('members');
+Route::get('/admin/members/create/', 'AdminController@createUser')->name('createUser');
 Route::get('/admin/reports/', 'AdminController@reports')->name('reports');
+
 
 //user route
 Route::get('/home', 'HomeController@index')->name('home');

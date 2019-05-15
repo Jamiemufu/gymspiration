@@ -10667,8 +10667,6 @@ a.text-dark:focus {
   width: 250px;
   min-height: 100vh;
   background-color: #2E2A2E;
-  overflow: hidden;
-  box-shadow: 4px 7px 10px rgba(0, 0, 0, 0.4);
 }
 
 .nav {
@@ -10695,6 +10693,25 @@ a.text-dark:focus {
   font-size: 18px;
 }
 
+.nav-items .dropdown-content {
+  min-width: 250px;
+  height: 0px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.nav-items .dropdown-content a {
+  padding-left: 80px;
+}
+
+.nav-items .show {
+  height: 100%;
+}
+
+.nav-items .active {
+  background: #5f5fd4;
+}
+
 .nav-items img {
   margin: auto;
   width: 100px;
@@ -10718,6 +10735,10 @@ a.text-dark:focus {
   padding-right: 10px;
 }
 
+.nav-items a .fa-caret-down {
+  padding-left: 7px;
+}
+
 .nav-items .logo:hover {
   background-color: #2E2A2E;
 }
@@ -10729,11 +10750,6 @@ a.text-dark:focus {
 
 .nav-items .username:hover {
   background-color: #2E2A2E;
-}
-
-.nav-items a:active {
-  opacity: 1;
-  background-color: #5f5fd4;
 }
 
 .hero {

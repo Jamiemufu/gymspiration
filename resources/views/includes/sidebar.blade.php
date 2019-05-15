@@ -4,7 +4,7 @@
         <!-- logo to show on all -->
         <li class="nav-items">
             <a class="logo" href="/">
-                <img src="../images/sidebar_logo.png" alt="Gymspiration Logo">
+                <img src="{{ asset('images/sidebar_logo.png') }}" alt="Gymspiration Logo">
             </a>
         </li>        
         
@@ -20,7 +20,7 @@
         @endif
 
             <li class="nav-items">
-                <a href="/">
+                <a href="/" id="home">
                     <i class="fas fa-home"></i>Home
                 </a>
             </li>
@@ -29,19 +29,26 @@
         @if (Auth::user() && Auth::user()->hasRole('admin'))
 
             <li class="nav-items">
-                <a href="{{ route('admin')}}">
+                <a href="{{ route('admin')}}" id="admin">
                     <i class="fas fa-tachometer-alt"></i>Dashboard
                 </a>
             </li>
             
             <li class="nav-items">
-                <a href="{{ route('members')}}">
-                    <i class="fas fa-users-cog"></i>Member Management
-                </a>
+                <div>
+                    <a class="dropdown" id="dropdown">
+                        <i class="fas fa-users-cog"></i>Member Management<i class="fas fa-caret-down"></i>
+                    </a>
+                </div>
+                <div class="dropdown-content" id="myDropdown">
+                    <a href="{{ route('createUser') }}" id="create"><i class="fas fa-user-plus"></i>Create User</a>
+                    <a href="#" id="edit"><i class="fas fa-user-tag"></i>Edit Users</a>
+                    <a href="#" id="deleteUser"><i class="fas fa-user-times"></i>Delete User</a>
+                </div>
             </li>
 
             <li class="nav-items">
-                <a href="{{ route('reports')}}">
+                <a href="{{ route('reports') }}" id="reports">
                     <i class="fas fa-paperclip"></i>Reports
                 </a>
             </li>
@@ -69,6 +76,6 @@
             </li>
 
         @endif
-    
+
     </ul>
 </nav>

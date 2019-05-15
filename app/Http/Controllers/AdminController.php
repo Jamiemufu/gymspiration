@@ -32,4 +32,9 @@ class AdminController extends Controller
     {
         return view('admin.home');
     }
+
+    public function createUser() 
+    {
+        return view('admin.home');
+    }
 }

@@ -93,7 +93,33 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+//declare consts
+var myDropdown = document.getElementById('myDropdown');
+var dropdown = document.getElementById('dropdown');
+var admin = document.getElementById('admin');
+var home = document.getElementById('home');
+var reports = document.getElementById('reports');
+var create = document.getElementById('create');
+var edit = document.getElementById('edit');
+var deleteUser = document.getElementById('delete');
+dropdown.addEventListener("click", function (_e) {
+  myDropdown.classList.toggle('show');
+  dropdown.classList.toggle('active');
+});
+showSideBarActive(); //toggles active class depending on url
 
+function showSideBarActive() {
+  if (window.location.href.indexOf("member") > -1) {
+    myDropdown.classList.add('show');
+    dropdown.classList.add('active');
+  } else if (window.location.href.indexOf("report") > -1) {
+    reports.classList.add('active');
+  } else if (window.location.pathname == "/") {
+    home.classList.add('active');
+  } else if (window.location.pathname == "/admin") {
+    admin.classList.add('active');
+  }
+}
 
 /***/ }),
 
@@ -104,7 +130,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/jamieevans/Documents/gymspiration/resources/js/script.js */"./resources/js/script.js");
+module.exports = __webpack_require__(/*! D:\Web_Dev\gym\resources\js\script.js */"./resources/js/script.js");
 
 
 /***/ })
