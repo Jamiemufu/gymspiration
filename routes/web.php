@@ -21,3 +21,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //admin only route
 Route::get('/admin', 'AdminController@index');
+

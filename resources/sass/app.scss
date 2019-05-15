@@ -2,7 +2,46 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
-@import 'variables';
+@import 'includes/variables';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+//includes
+@import 'includes/header.scss';
+@import 'includes/footer.scss';
+
+//pages
+@import 'pages/dashboard.scss';
+@import 'pages/login.scss';
+
+body {
+    margin: 0;
+    padding: 0;
+    background: rgb(95, 95, 212);
+    min-height: 100vh;
+    width: 100%;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    width: 100%;
+}
+
+.flex-container {
+    width: 100%;
+}
+
+// General styles
+
+button {
+    background: rgb(95, 95, 212);
+    color: white;
+    width: 150px;
+    border: 0;
+    border-radius: 5px;
+}
