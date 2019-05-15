@@ -12,17 +12,23 @@
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
-            <div class="username">
-                <label for="username">Username:
-                    <input type="text" name="username" required autofocus>
-                </label>
-            </div>
-
             @error('username')
             <span class="" role="alert">
                 <strong>{{ $message }}</strong>
             </span>
             @enderror
+            
+            @error('password')
+            <span class="" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+            
+            <div class="username">
+                <label for="username">Username:
+                    <input type="text" name="username" required autofocus>
+                </label>
+            </div>
 
             <div class="password">
                 <label for="password"> Password:
@@ -30,12 +36,6 @@
                         autocomplete="current-password">
                 </label>
             </div>
-
-            @error('password')
-            <span class="" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-            @enderror
 
             <div class="checkbox">
                 <input name="remember" type="checkbox" {{ old('remember') ? 'checked' : '' }}>

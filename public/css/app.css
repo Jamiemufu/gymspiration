@@ -10715,8 +10715,8 @@ a.text-dark:focus {
 }
 
 .login form span {
-  padding: 15px;
-  color: maroon;
+  padding: 15px 15px 25px 15px;
+  color: #5f5fd4;
 }
 
 .login .username {
@@ -10724,11 +10724,11 @@ a.text-dark:focus {
 }
 
 .login .password {
-  padding-bottom: 15px;
+  padding-bottom: 25px;
 }
 
 .login .forgot {
-  padding-bottom: 20px;
+  padding-bottom: 25px;
 }
 
 .login .checkbox {
@@ -10736,6 +10736,7 @@ a.text-dark:focus {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  padding-bottom: 10px;
 }
 
 .login .checkbox label {
