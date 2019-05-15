@@ -6,7 +6,7 @@
     <div class="login">
 
         <div class="logo">
-            <img src="{{ asset('images/logo_crop.png') }}" alt="">
+            <img src="{{ asset('images/logo_crop.png') }}" alt="Gymspiration Logo">
         </div>
        
         <form method="POST" action="{{ route('login') }}">

@@ -13,7 +13,7 @@
 
 
 //root
-Route::get('/', 'Auth\LoginController@showLoginForm')->name('login');
+Route::get('/', 'Controller@index');
 
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -26,8 +26,10 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 // Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 // Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
-//admin only route
+//admin only routes
 Route::get('/admin', 'AdminController@index')->name('admin');
+Route::get('/admin/members/', 'AdminController@members')->name('members');
+Route::get('/admin/reports/', 'AdminController@reports')->name('reports');
 
 //user route
 Route::get('/home', 'HomeController@index')->name('home');

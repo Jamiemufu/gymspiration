@@ -24,7 +24,7 @@
 
 <body>
 
-    @include('includes.nav')
+    @include('includes.sidebar')
    
     
     <main>

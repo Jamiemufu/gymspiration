@@ -1,12 +1,9 @@
 .nav-container {
     position: absolute;
-    width: 200px;
+    width: 250px;
     min-height: 100vh;
-    z-index: 100;
     background-color: #2E2A2E;
     overflow: hidden;
-    transition: width .3s ease;
-    cursor: pointer;
     box-shadow: 4px 7px 10px rgba(0, 0, 0, .4);
 
 }
@@ -14,7 +11,7 @@
 .nav {
     list-style-type: none;
     color: white;
-    max-width: 200px;
+    max-width: 250px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,31 +20,44 @@
 
 .nav-items {
 
+    .logo {
+        width: 100%;
+        padding-bottom: 25px;
+    }
+
+    .username {
+        margin-top: -35px;
+        text-align: center;
+        padding-bottom: 50px;
+        color: $base-color;
+        text-transform: capitalize;
+        font-size: 18px;
+    }
+
     img {
+        margin: auto;
         width: 100px;
         display: block;
     }
 
-    padding-bottom:4rem;
-
     a {
 
-        width: 200px;
+        width: 100%;
+
         i {
-            padding-right: 15px;
+            font-size: 16px;
+            padding-right: 10px;
         }
-        padding-top: 10px;
-        padding-bottom: 10px;
+
         position: relative;
         display: block;
-        padding-left: 50px;
-        padding-right: 15px;
+        padding: 15px 25px;
         transition: all .3s ease;
-        margin-right: 10px;
         text-decoration: none;
         color: white;
         font-weight: 100;
-        font-size: 1.35em;
+        font-size: 14px;
+
     }
 
     .logo:hover {
@@ -59,10 +69,12 @@
         background-color: $base-color;
     }
 
+    .username:hover {
+        background-color: $sidebar-bg;
+    }
+
     a:active {
         opacity: 1;
         background-color: $base-color;
     }
 }
-
-

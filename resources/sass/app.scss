@@ -13,6 +13,7 @@
 @import 'includes/sidebar.scss';
 
 //pages
+@import 'pages/welcome.scss';
 @import 'pages/dashboard.scss';
 @import 'pages/login.scss';
 
@@ -23,17 +24,18 @@ body {
 }
 
 main {
-    min-height: 100vh;    
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    // set margin-left to counter sidebar
-    margin-left: 200px;
+    // offset for sidebar
+    margin-left: 250px;
 }
 
 
 .flex-container {
+    margin: auto;
     width: 100%;
 }
 

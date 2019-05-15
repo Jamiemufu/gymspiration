@@ -18,9 +18,18 @@ class AdminController extends Controller
         $this->middleware('role:admin');
     }
 
-
     public function index()
     {
-        return view('admin.dash');
+        return view('admin.home');
+    }
+
+    public function members()
+    {
+        return view('admin.home');
+    }
+
+    public function reports()
+    {
+        return view('admin.home');
     }
 }

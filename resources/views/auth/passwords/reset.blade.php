@@ -1,3 +1,4 @@
+<!-- GENERATED FROM AUTH - KEEP FOR REFERENCE -->
 @extends('layouts.app')
 
 @section('content')
