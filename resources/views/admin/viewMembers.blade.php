@@ -13,51 +13,71 @@
     </div>
 
     @if (session('status'))
-        <div class="errors">
-           {{ session('status') }}
-        </div>
+    <div class="errors">
+        {{ session('status') }}
+    </div>
     @endif
 
-    <div class="members">
+    <div class="search">
+        <form action="{{ route('searchPost') }}" method="POST">
+            @csrf
 
-        <table>
-            <tr>
-                <th>Name:</th>
-                <th>Email:</th>
-                <th>Membership:</th>
-                <th></th>
-                <th></th>
-            </tr>
-            @foreach ($members as $member)
-            <tr>
-                <td class="name">
-                    {{$member->firstName}} {{$member->lastName}}
-                </td>
-                <td>
-                    {{$member->email}}
-                </td>
-                <td class="membership">
-                    {{$member->membership->type}}
-                </td>
-                <td>
-                    <a href="{{ route('editMember', ['id' => $member->id]) }}">
-                        <i class="fas fa-edit"></i> Edit
-                    </a>
-                </td>
-                <td>
-                    <form method="POST" action="{{ action('MemberController@destroy', $member->id) }}">
-                        @method('DELETE')
-                        @csrf
-                        <button onclick="return confirm('Are you sure you want to delete this user?');">
-                            <i class="fas fa-minus-circle"></i> Delete
-                        </button>                       
-                    </form>                    
-                </td>
-            </tr>
-            @endforeach
-        </table>
+            <label for="search">Search Members
+                <input type="text" name="search" required>
+            </label>
 
+            <button>Search</button>
+        </form>
     </div>
+    
+    @if (isset($members))
+        @if($members->isEmpty())
+           <div class="errors">
+               No Results Found
+           </div>
+        @else
+            <div class="members">
+
+                <table>
+                    <tr>
+                        <th>Name:</th>
+                        <th>Email:</th>
+                        <th>Membership:</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+
+                    @foreach ($members as $member)
+                    <tr>
+                        <td class="name">
+                            {{$member->firstName}} {{$member->lastName}}
+                        </td>
+                        <td>
+                            {{$member->email}}
+                        </td>
+                        <td class="membership">
+                            {{$member->membership->type}}
+                        </td>
+                        <td>
+                            <a href="{{ route('editMember') }}">
+                                <i class="fas fa-edit"></i> Edit
+                            </a>
+                        </td>
+                        <td>
+                            <form method="POST" action="{{ action('MemberController@destroy', $member->id) }}">
+                                @method('DELETE')
+                                @csrf
+                                <button onclick="return confirm('Are you sure you want to delete this user?');">
+                                    <i class="fas fa-minus-circle"></i> Delete
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    @endforeach
+                </table>
+            </div>
+        @endif
+    @endif
 </div>
 
 

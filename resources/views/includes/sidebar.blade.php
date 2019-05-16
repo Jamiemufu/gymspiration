@@ -51,9 +51,15 @@
                 </div>
 
                 <div class="dropdown-content" id="myDropdown">
+            
+
                     <a href="{{ route('viewMember') }}" id="view">
-                        <i class="fas fa-users"></i><span>View Members</span>
-                    </a>
+                        <i class="fas fa-users"></i></span>View Members</span>
+                    </a> 
+                      
+                    {{-- <a href="{{ route('search') }}" id="search">
+                        <i class="fas fa-user-plus"></i></span>Search Member</span>
+                    </a>  --}}
 
                     <a href="{{ route('createMember') }}" id="create">
                         <i class="fas fa-user-plus"></i></span>Create Member</span>

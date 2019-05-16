@@ -119,7 +119,7 @@ sidebarToggleOpen.addEventListener("click", function (e) {
 }); //toggle close
 
 sidebarToggleClose.addEventListener("click", function (e) {
-  document.getElementById("nav-container").style.width = "250px";
+  document.getElementById("nav-container").style.width = "50px";
   document.getElementById("toggle-open").style.display = "block";
   document.getElementById("toggle-close").style.display = "none"; // loop through nav items
 

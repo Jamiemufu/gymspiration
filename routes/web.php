@@ -35,9 +35,10 @@ Route::get('/admin/members/', 'AdminController@members')->name('members');
 Route::get('/admin/members/create/', 'MemberController@create')->name('createMember');
 Route::post('/admin/members/', 'MemberController@store')->name('storeMember');
 Route::get('/admin/members/', 'MemberController@index')->name('viewMember');
-Route::get('/admin/members/edit/{id}', 'MemberController@edit')->name('editMember');
+Route::get('/admin/members/edit', 'MemberController@edit')->name('editMember');
+//search routes
+Route::any('/admin/members/search', 'MemberController@search')->name('searchPost');
 Route::delete('/admin/members/delete/{id}', 'MemberController@destroy')->name('deleteMember');
-
 Route::get('/admin/reports/', 'AdminController@reports')->name('reports');
 
 

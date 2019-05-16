@@ -10796,7 +10796,7 @@ a.text-dark:focus {
   color: #5f5fd4;
 }
 
-.form-container form {
+form {
   margin: auto;
   width: 100%;
   display: flex;
@@ -10806,14 +10806,14 @@ a.text-dark:focus {
   text-align: left;
 }
 
-.form-container form label {
+form label {
   width: 100%;
   max-width: 450px;
 }
 
-.form-container form input,
-.form-container form select,
-.form-container form option {
+form input,
+form select,
+form option {
   margin-top: 5px;
   width: 100%;
   max-width: 450px;
@@ -10824,21 +10824,21 @@ a.text-dark:focus {
   color: #5f5fd4;
 }
 
-.form-container form select {
+form select {
   height: 35px;
   border-radius: none;
 }
 
-.form-container form button {
+form button {
   padding: 7px;
 }
 
-.form-container form span {
+form span {
   padding: 15px 15px 25px 15px;
   color: whitesmoke;
 }
 
-.form-container .button {
+.button {
   padding-bottom: 25px;
 }
 
@@ -10923,6 +10923,10 @@ a {
 .dash-title p {
   width: 80%;
   padding: 20px;
+}
+
+.search {
+  margin-bottom: 25px;
 }
 
 .dash-tiles {

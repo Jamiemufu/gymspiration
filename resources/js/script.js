@@ -14,7 +14,6 @@ const sidebarToggleClose = document.getElementById('toggle-close');
 const navItems = document.getElementsByClassName('nav-items');
 
 
-
 //toggle mobile burger
 sidebarToggleOpen.addEventListener("click", function(e) {
     document.getElementById("nav-container").style.width = "250px";
@@ -30,7 +29,7 @@ sidebarToggleOpen.addEventListener("click", function(e) {
 
 //toggle close
 sidebarToggleClose.addEventListener("click", function(e) {
-    document.getElementById("nav-container").style.width = "250px";
+    document.getElementById("nav-container").style.width = "50px";
     document.getElementById("toggle-open").style.display = "block";
     document.getElementById("toggle-close").style.display = "none";
 

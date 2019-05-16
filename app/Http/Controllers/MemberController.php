@@ -83,7 +83,24 @@ class MemberController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * search - search Member
+     *
+     * @param  mixed $request
+     * @param  mixed $id
+     *
+     * @return void
+     */
+    public function search(Request $request)
+    {   
+        
+        $name = $request->input('search');
+        $members = \App\Member::searchNames($name)->get();
+
+        return view('admin.viewMembers')->with('members', $members);
+    }
+
+    /**
+     * Display the searched resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -99,9 +116,9 @@ class MemberController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        return redirect()->action('MemberController@index');
+        
     }
 
     /**
