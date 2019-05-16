@@ -10756,7 +10756,6 @@ a.text-dark:focus {
 .form-container {
   margin: auto;
   background: #2E2A2E;
-  max-width: 500px;
   width: 90%;
   padding: 50px 10px;
   border-radius: 10px;
@@ -10826,6 +10825,11 @@ a.text-dark:focus {
 .hero img {
   margin: 0 auto;
   width: 100%;
+}
+
+.login {
+  margin: auto;
+  max-width: 600px;
 }
 
 .username {
