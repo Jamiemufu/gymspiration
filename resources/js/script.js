@@ -9,6 +9,37 @@ const view = document.getElementById('view');
 const edit = document.getElementById('edit');
 const deleteMember = document.getElementById('deleteMember');
 const links = document.getElementsByTagName('a');
+const sidebarToggleOpen = document.getElementById('toggle-open');
+const sidebarToggleClose = document.getElementById('toggle-close');
+const navItems = document.getElementsByClassName('nav-items');
+
+
+
+//toggle mobile burger
+sidebarToggleOpen.addEventListener("click", function(e) {
+    document.getElementById("nav-container").style.width = "250px";
+    document.getElementById("toggle-close").style.display = "block";
+    document.getElementById("toggle-open").style.display = "none";
+
+   // loop through nav items
+    for (let i = 0; i < navItems.length; i++) {
+       navItems[i].style.opacity = 1;
+    }
+    
+});
+
+//toggle close
+sidebarToggleClose.addEventListener("click", function(e) {
+    document.getElementById("nav-container").style.width = "250px";
+    document.getElementById("toggle-open").style.display = "block";
+    document.getElementById("toggle-close").style.display = "none";
+
+     // loop through nav items
+     for (let i = 0; i < navItems.length; i++) {
+        navItems[i].style.opacity = 0;
+     }
+});
+  
 
 dropdown.addEventListener("click", function(_e) {
     //loop through all links and remove any with active
@@ -38,4 +69,6 @@ function showSideBarActive() {
         admin.classList.add('active');
     }
 }
+
+
 

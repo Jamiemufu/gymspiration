@@ -1,0 +1,46 @@
+// view members
+
+.members {
+    width: 100%;
+    padding: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        text-decoration: none;
+        color: $base-bg;
+    }
+
+    button {
+        border: none;
+        background: none;
+        width: auto;
+        outline: none;
+    }
+}
+
+.membership {
+    text-transform: capitalize;
+}
+
+.name {
+    text-transform: capitalize;
+}
+
+table {  
+    width: 90%;
+
+    th {
+        font-size: 14px;
+        font-weight: bold;
+        color: $base-color;
+    }
+    
+    i {
+        font-size: 14px;
+    }
+
+}
+

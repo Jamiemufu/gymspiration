@@ -14,13 +14,10 @@ class UpdateRelationships extends Migration
     public function up()
     {
          //set the relationships
-         Schema::table('subscriptions', function (Blueprint $table) {
-            $table->foreign('member_id')->references('id')->on('members');
-            $table->foreign('membership_id')->references('id')->on('memberships');
-        });
 
         Schema::table('members', function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('membership_id')->references('id')->on('memberships');
         });
 
     }

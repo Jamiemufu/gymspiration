@@ -26,6 +26,7 @@ class CreateMembersTable extends Migration
             $table->string('postcode');
             $table->string('phone')->nullable();
             $table->date('DOB')->nullable();
+            $table->unsignedInteger('membership_id')->nullable();
             $table->timestamp('created_at');
         });
     }

@@ -104,6 +104,29 @@ var view = document.getElementById('view');
 var edit = document.getElementById('edit');
 var deleteMember = document.getElementById('deleteMember');
 var links = document.getElementsByTagName('a');
+var sidebarToggleOpen = document.getElementById('toggle-open');
+var sidebarToggleClose = document.getElementById('toggle-close');
+var navItems = document.getElementsByClassName('nav-items'); //toggle mobile burger
+
+sidebarToggleOpen.addEventListener("click", function (e) {
+  document.getElementById("nav-container").style.width = "250px";
+  document.getElementById("toggle-close").style.display = "block";
+  document.getElementById("toggle-open").style.display = "none"; // loop through nav items
+
+  for (var i = 0; i < navItems.length; i++) {
+    navItems[i].style.opacity = 1;
+  }
+}); //toggle close
+
+sidebarToggleClose.addEventListener("click", function (e) {
+  document.getElementById("nav-container").style.width = "250px";
+  document.getElementById("toggle-open").style.display = "block";
+  document.getElementById("toggle-close").style.display = "none"; // loop through nav items
+
+  for (var i = 0; i < navItems.length; i++) {
+    navItems[i].style.opacity = 0;
+  }
+});
 dropdown.addEventListener("click", function (_e) {
   //loop through all links and remove any with active
   for (var i = 0; i < links.length; i++) {
@@ -137,7 +160,7 @@ function showSideBarActive() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Web_Dev\gym\resources\js\script.js */"./resources/js/script.js");
+module.exports = __webpack_require__(/*! /Users/jamieevans/Documents/gymspiration/resources/js/script.js */"./resources/js/script.js");
 
 
 /***/ })

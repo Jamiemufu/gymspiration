@@ -1,10 +1,10 @@
 .form-container {
     margin: auto;
-    background: $sidebar-bg;
+    background: $base-bg;
     width: 90%;
     padding: 50px 10px;
     border-radius: 10px;
-    color: $base-bg;
+    color: $base-color;
 
     form {
         margin: auto;
@@ -20,39 +20,29 @@
             max-width: 450px;
         }
 
-        input[type='text'],
-        input[type='number'],
-        input[type='date'],
-        input[type='email'] {
+        input , select, option {
             margin-top: 5px;
             width: 100%;
             max-width: 450px;
             padding: 5px;
             outline: none;
             border: 1px solid $base-color;
-            background: $base-color;
-            color: $base-bg;
-        }
+            background: $base-bg;
+            color: $base-color;
+        }        
 
-        ::-webkit-calendar-picker-indicator {
-            background: $base-color;
+        select {
+            height: 35px;
+            border-radius: none;
         }
-
-        input[type="date"]::-webkit-input-placeholder{ 
-            visibility: hidden !important;
-        }
-
-        input::-webkit-calendar-picker-indicator{
-            display: none;
-        }
-
+        
         button {
             padding: 7px;
         }
 
         span {
             padding: 15px 15px 25px 15px;
-            color: $base-color;
+            color: $base-bg;
         }
     }
 

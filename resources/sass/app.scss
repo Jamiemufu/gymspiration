@@ -18,6 +18,7 @@
 @import 'pages/login.scss';
 @import 'pages/dashboard.scss';
 @import 'pages/createMember.scss';
+@import 'pages/viewMembers.scss';
 
 // General Styles
 
@@ -36,6 +37,10 @@ main {
     justify-content: center;
     // offset for sidebar
     margin-left: 250px;
+
+    @media (max-width: 600px) {
+        margin-left: 50px;
+    }
 }
 
 .flex-container {

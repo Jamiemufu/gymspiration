@@ -28,13 +28,15 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 //admin only routes
 Route::get('/admin', 'AdminController@dashboard')->name('dashboard');
-//member routes
+
 Route::get('/admin/members/', 'AdminController@members')->name('members');
+
+//member routes
 Route::get('/admin/members/create/', 'MemberController@create')->name('createMember');
 Route::post('/admin/members/', 'MemberController@store')->name('storeMember');
 Route::get('/admin/members/', 'MemberController@index')->name('viewMember');
-Route::get('/admin/members/edit/', 'AdminController@editMember')->name('editMember');
-Route::get('/admin/members/delete/', 'AdminController@deleteMember')->name('deleteMember');
+Route::get('/admin/members/edit/{id}', 'MemberController@edit')->name('editMember');
+Route::delete('/admin/members/delete/{id}', 'MemberController@destroy')->name('deleteMember');
 
 Route::get('/admin/reports/', 'AdminController@reports')->name('reports');
 

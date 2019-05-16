@@ -26,7 +26,7 @@ class MemberController extends Controller
      */
     public function index()
     {
-        $members = \App\Member::with('subscription')->with('membership')->latest()->get();
+        $members = \App\Member::with('membership')->latest()->get();
 
         return view('admin.viewMembers')->with('members', $members);
     }
@@ -59,6 +59,7 @@ class MemberController extends Controller
             'town' => 'required|min:2',
             'county' => 'required|min:2',
             'postcode' => 'required|min:4',
+            'membership' => 'integer'
         ]);
         
         //store member then subscription
@@ -74,10 +75,11 @@ class MemberController extends Controller
         $member->postcode = $request->postcode;
         $member->phone = $request->phone;
         $member->DOB = $request->dob;
-
+        $member->membership_id = $request->membership;
+        
         $member->save();
     
-        return redirect()->route('dashboard')->with('status', 'Member succesfully!');
+        return redirect()->route('dashboard')->with('status', 'Member created succesfully!');
     }
 
     /**
@@ -88,7 +90,7 @@ class MemberController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -99,7 +101,7 @@ class MemberController extends Controller
      */
     public function edit($id)
     {
-        //
+        return redirect()->action('MemberController@index');
     }
 
     /**
@@ -122,6 +124,10 @@ class MemberController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $member = \App\Member::find($id);
+
+        $member->delete();
+
+        return redirect('/admin/members/')->with('status', "Member deleted succesfully!");
     }
 }

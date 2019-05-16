@@ -42,6 +42,7 @@ class FakerUsers extends Seeder
                 'phone' => $faker->phonenumber,
                 'DOB' => $faker->date,
                 'created_at' => $faker->date,
+                'membership_id' => rand(1,2),
             ]);
 
 	    }

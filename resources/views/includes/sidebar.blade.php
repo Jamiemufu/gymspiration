@@ -1,6 +1,15 @@
 <!-- nav sidebar -->
-<nav class="nav-container">
+<nav class="nav-container" id="nav-container">
     <ul class="nav">
+                  
+        <div class="sidebar-toggle-open" id="toggle-open">
+            <i class="fas fa-bars"></i>
+        </div>     
+
+        <div class="sidebar-toggle-close" id="toggle-close">
+            <i class="fas fa-times"></i>
+        </div>    
+
         <!-- logo to show on all -->
         <li class="nav-items">
             <a class="sidebar-logo">
@@ -21,7 +30,7 @@
 
             <li class="nav-items">
                 <a href="/" id="home">
-                    <i class="fas fa-home"></i>Home
+                    <i class="fas fa-home"></i><span>Home</span>
                 </a>
             </li>
 
@@ -30,39 +39,32 @@
 
             <li class="nav-items">
                 <a href="{{ route('dashboard')}}" id="admin">
-                    <i class="fas fa-tachometer-alt"></i>Dashboard
+                    <i class="fas fa-tachometer-alt"></i><span>Dashboard</span>
                 </a>
             </li>
             
             <li class="nav-items">
                 <div>
                     <a class="dropdown" id="dropdown">
-                        <i class="fas fa-users-cog"></i>Member Management<i class="fas fa-caret-down"></i>
+                        <i class="fas fa-users-cog"></i></span>Member Management</span><i class="fas fa-caret-down"></i>
                     </a>
                 </div>
 
                 <div class="dropdown-content" id="myDropdown">
                     <a href="{{ route('viewMember') }}" id="view">
-                        <i class="fas fa-users"></i>View Members
+                        <i class="fas fa-users"></i><span>View Members</span>
                     </a>
 
                     <a href="{{ route('createMember') }}" id="create">
-                        <i class="fas fa-user-plus"></i>Create Member
-                    </a>
-
-                    <a href="{{ route('editMember') }}" id="edit">
-                        <i class="fas fa-user-tag"></i>Edit Members
-                    </a>
-
-                    <a href="{{ route('deleteMember') }}" id="deleteMember">
-                        <i class="fas fa-user-times"></i>Delete Member
-                    </a>
+                        <i class="fas fa-user-plus"></i></span>Create Member</span>
+                    </a>                   
+                    
                 </div>
             </li>
 
             <li class="nav-items">
                 <a href="{{ route('reports') }}" id="reports">
-                    <i class="fas fa-paperclip"></i>Reports
+                    <i class="fas fa-paperclip"></i><span>Reports</span>
                 </a>
             </li>
 
@@ -84,7 +86,7 @@
 
             <li class="nav-items">
                 <a href="/login">
-                    <i class="fas fa-sign-in-alt"></i>Login                
+                    <i class="fas fa-sign-in-alt"></i>Login               
                 </a>
             </li>
 

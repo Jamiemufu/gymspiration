@@ -26,10 +26,10 @@ class AdminController extends Controller
     public function dashboard()
     {
         //with relation membership
-        $monthly = \App\Subscription::where('membership_id', 1)->with('membership')->get();
-        $yearly = \App\Subscription::where('membership_id', 2)->with('membership')->get();
+        $monthly = \App\Member::with('membership')->where('membership_id', 1)->get();
+        $yearly = \App\Member::with('membership')->where('membership_id', 2)->get();
         $member = \App\Member::latest()->first();
-
+        
         $monthlyStats = array();
         $yearlyStats = array();
 

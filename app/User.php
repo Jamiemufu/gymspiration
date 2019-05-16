@@ -47,7 +47,6 @@ class User extends Authenticatable
             ->belongsToMany('App\Role')
             ->withTimestamps();
     }
-
     /**
      * checks role
      *

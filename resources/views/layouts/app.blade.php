@@ -10,10 +10,6 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/script.js') }}" defer></script>
-
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
         integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -34,6 +30,10 @@
     <!-- footer -->
     @include('includes.footer')
 
+    <!-- Scripts -->
+    <script src="{{ mix('js/script.js') }}"></script>
+    <script src="{{ mix('js/app.js') }}"></script>
+    
 </body>
 
 </html>

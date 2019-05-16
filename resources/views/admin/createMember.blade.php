@@ -6,9 +6,8 @@
     <div class="form-container">
         <div class="create-member">
 
-
             <div class="logo">
-                <img src="{{ asset('images/sidebar_logo.png') }}" alt="Gymspiration Logo">
+                <img src="{{ asset('images/logo.png') }}" alt="Gymspiration Logo">
                 <h1>Create New Member</h1>
             </div>
 
@@ -84,6 +83,16 @@
                 <div class="inputs">
                     <label for="dob">Date of Birth:
                         <input type="date" name="dob">
+                    </label>
+                </div>
+
+                <div class="inputs">
+                    <label for="membership">Select a membership type: (yearly/monthly)
+                        <select name="membership" id="membership">
+                            <option value="" selected disabled hidden>Select</option>
+                            <option value="1">Monthly</option>
+                            <option value="2">Yearly</option>
+                        </select>
                     </label>
                 </div>
 

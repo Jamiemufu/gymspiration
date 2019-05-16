@@ -7,14 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Member extends Model
 {
 
-    public function subscription()
-    {
-        return $this->hasOne('App\Subscription', 'member_id');
-    } 
-
     public function membership()
     {
-        return $this->hasOne('App\Membership', 'id');
+        return $this->hasOne('App\Membership', 'id', 'membership_id');
     }
 
     public $timestamps = false;

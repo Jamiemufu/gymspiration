@@ -8,7 +8,7 @@
         <div class="form-container">
 
             <div class="logo">
-                <img src="{{ asset('images/sidebar_logo.png') }}" alt="Gymspiration Logo">
+                <img src="{{ asset('images/logo.png') }}" alt="Gymspiration Logo">
                 <h1>GYMSPIRATION</h1>
             </div>
 
