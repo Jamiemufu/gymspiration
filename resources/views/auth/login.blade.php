@@ -3,10 +3,11 @@
 @section('content')
 
 <div class="flex-container">
-    <div class="login">
+    <div class="form-container">
 
         <div class="logo">
-            <img src="{{ asset('images/logo_crop.png') }}" alt="Gymspiration Logo">
+            <img src="{{ asset('images/sidebar_logo.png') }}" alt="Gymspiration Logo">
+            <h1>GYMSPIRATION</h1>
         </div>
        
         <form method="POST" action="{{ route('login') }}">

@@ -14,7 +14,7 @@ class UpdateRelationships extends Migration
     public function up()
     {
          //set the relationships
-         Schema::table('membership_type', function (Blueprint $table) {
+         Schema::table('subscriptions', function (Blueprint $table) {
             $table->foreign('member_id')->references('id')->on('members');
             $table->foreign('membership_id')->references('id')->on('memberships');
         });
@@ -22,6 +22,7 @@ class UpdateRelationships extends Migration
         Schema::table('members', function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('users');
         });
+
     }
 
     /**

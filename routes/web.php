@@ -27,9 +27,15 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 // Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 //admin only routes
-Route::get('/admin', 'AdminController@index')->name('admin');
+Route::get('/admin', 'AdminController@dashboard')->name('dashboard');
+//member routes
 Route::get('/admin/members/', 'AdminController@members')->name('members');
-Route::get('/admin/members/create/', 'AdminController@createUser')->name('createUser');
+Route::get('/admin/members/create/', 'MemberController@create')->name('createMember');
+Route::post('/admin/members/', 'MemberController@store')->name('storeMember');
+Route::get('/admin/members/', 'MemberController@index')->name('viewMember');
+Route::get('/admin/members/edit/', 'AdminController@editMember')->name('editMember');
+Route::get('/admin/members/delete/', 'AdminController@deleteMember')->name('deleteMember');
+
 Route::get('/admin/reports/', 'AdminController@reports')->name('reports');
 
 

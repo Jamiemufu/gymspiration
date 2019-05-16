@@ -100,9 +100,16 @@ var admin = document.getElementById('admin');
 var home = document.getElementById('home');
 var reports = document.getElementById('reports');
 var create = document.getElementById('create');
+var view = document.getElementById('view');
 var edit = document.getElementById('edit');
-var deleteUser = document.getElementById('delete');
+var deleteMember = document.getElementById('deleteMember');
+var links = document.getElementsByTagName('a');
 dropdown.addEventListener("click", function (_e) {
+  //loop through all links and remove any with active
+  for (var i = 0; i < links.length; i++) {
+    links[i].classList.remove('active');
+  }
+
   myDropdown.classList.toggle('show');
   dropdown.classList.toggle('active');
 });

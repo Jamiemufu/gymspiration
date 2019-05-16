@@ -1,102 +1,40 @@
 //login
 
-.login {
-    margin: auto;
-    background: $base-bg;
-    max-width: 500px;
-    width: 90%;
-    padding: 50px 10px;
-    border-radius: 10px;
-    color: rgb(95, 95, 212);
+.username {
+    padding-bottom: 15px;
+}
 
-    .logo {
-        margin: 0 auto;
-        max-width: 450px;
-        width: 100%;
-        padding-bottom: 30px;
+.password {
+    padding-bottom: 25px;
+}
 
-        img {
-            margin: 0 auto;
-            width: 250px;
-            display: block;
-        }
+.forgot {
+    padding-bottom: 25px;
+}
+
+.checkbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+
+    label {
+        text-align: center;
+        padding-left: 5px;
     }
 
-    form {
-        margin: auto;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: left;
-
-        label {
-            width: 100%;
-            max-width: 450px;
-        }
-
-        input[type='text'] {
-            margin-top: 5px;
-            width: 100%;
-            max-width: 450px;
-            padding: 5px;
-            outline: none;
-            border: 1px solid $base-color;
-            background: $base-bg;
-        }
-
-        button {
-            padding: 7px;
-        }
-
-        span {
-            padding: 15px 15px 25px 15px;
-            color: $base-color;
-        }
+    input[type='checkbox'] {
+        padding: 7px;
+        width: 20px;
+        height: 20px;
+        margin-bottom: 7px;
+        outline: none;
+        border: 1px solid $base-color;
     }
+}
 
-    .username {
-        padding-bottom: 15px;
-    }
-
-    .password {
-        padding-bottom: 25px;
-    }
-
-    .forgot {
-        padding-bottom: 25px;
-    }
-
-    .checkbox {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding-bottom: 10px;
-
-        label {
-            text-align: center;
-            padding-left: 5px;
-        }
-
-        input[type='checkbox'] {
-            padding: 7px;
-            width: 20px;
-            height: 20px;
-            margin-bottom: 7px;
-            outline: none;
-            border: 1px solid $base-color;
-        }
-    }
-
-    .button {
-        padding-bottom: 25px;
-    }
-
-    a {
-        text-decoration: underline;
-        color: $base-color;
-    }
-
+a {
+    text-decoration: underline;
+    color: $base-color;
 }

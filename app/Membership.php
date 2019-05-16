@@ -6,8 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Membership extends Model
 {
-    public function membership()
+
+    public function subscription()
     {
-        return $this->belongsToMany('App\Member');
+        return $this->hasOne('App\Subscription', 'id');
     }
+
+    public function member()
+    {
+        return $this->belongsTo('App\Member', 'id');
+    }
+    
 }

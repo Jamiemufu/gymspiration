@@ -10665,6 +10665,7 @@ a.text-dark:focus {
 .nav-container {
   position: absolute;
   width: 250px;
+  height: 100%;
   min-height: 100vh;
   background-color: #2E2A2E;
 }
@@ -10679,7 +10680,7 @@ a.text-dark:focus {
   min-height: 100vh;
 }
 
-.nav-items .logo {
+.nav-items .sidebar-logo {
   width: 100%;
   padding-bottom: 25px;
 }
@@ -10739,7 +10740,7 @@ a.text-dark:focus {
   padding-left: 7px;
 }
 
-.nav-items .logo:hover {
+.nav-items .sidebar-logo:hover {
   background-color: #2E2A2E;
 }
 
@@ -10750,6 +10751,70 @@ a.text-dark:focus {
 
 .nav-items .username:hover {
   background-color: #2E2A2E;
+}
+
+.form-container {
+  margin: auto;
+  background: #2E2A2E;
+  max-width: 500px;
+  width: 90%;
+  padding: 50px 10px;
+  border-radius: 10px;
+  color: whitesmoke;
+}
+
+.form-container form {
+  margin: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+.form-container form label {
+  width: 100%;
+  max-width: 450px;
+}
+
+.form-container form input[type=text],
+.form-container form input[type=number],
+.form-container form input[type=date],
+.form-container form input[type=email] {
+  margin-top: 5px;
+  width: 100%;
+  max-width: 450px;
+  padding: 5px;
+  outline: none;
+  border: 1px solid #5f5fd4;
+  background: #5f5fd4;
+  color: whitesmoke;
+}
+
+.form-container form ::-webkit-calendar-picker-indicator {
+  background: #5f5fd4;
+}
+
+.form-container form input[type=date]::-webkit-input-placeholder {
+  visibility: hidden !important;
+}
+
+.form-container form input::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.form-container form button {
+  padding: 7px;
+}
+
+.form-container form span {
+  padding: 15px 15px 25px 15px;
+  color: #5f5fd4;
+}
+
+.form-container .button {
+  padding-bottom: 25px;
 }
 
 .hero {
@@ -10763,76 +10828,19 @@ a.text-dark:focus {
   width: 100%;
 }
 
-.login {
-  margin: auto;
-  background: whitesmoke;
-  max-width: 500px;
-  width: 90%;
-  padding: 50px 10px;
-  border-radius: 10px;
-  color: #5f5fd4;
-}
-
-.login .logo {
-  margin: 0 auto;
-  max-width: 450px;
-  width: 100%;
-  padding-bottom: 30px;
-}
-
-.login .logo img {
-  margin: 0 auto;
-  width: 250px;
-  display: block;
-}
-
-.login form {
-  margin: auto;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-}
-
-.login form label {
-  width: 100%;
-  max-width: 450px;
-}
-
-.login form input[type=text] {
-  margin-top: 5px;
-  width: 100%;
-  max-width: 450px;
-  padding: 5px;
-  outline: none;
-  border: 1px solid #5f5fd4;
-  background: whitesmoke;
-}
-
-.login form button {
-  padding: 7px;
-}
-
-.login form span {
-  padding: 15px 15px 25px 15px;
-  color: #5f5fd4;
-}
-
-.login .username {
+.username {
   padding-bottom: 15px;
 }
 
-.login .password {
+.password {
   padding-bottom: 25px;
 }
 
-.login .forgot {
+.forgot {
   padding-bottom: 25px;
 }
 
-.login .checkbox {
+.checkbox {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -10840,12 +10848,12 @@ a.text-dark:focus {
   padding-bottom: 10px;
 }
 
-.login .checkbox label {
+.checkbox label {
   text-align: center;
   padding-left: 5px;
 }
 
-.login .checkbox input[type=checkbox] {
+.checkbox input[type=checkbox] {
   padding: 7px;
   width: 20px;
   height: 20px;
@@ -10854,13 +10862,119 @@ a.text-dark:focus {
   border: 1px solid #5f5fd4;
 }
 
-.login .button {
-  padding-bottom: 25px;
-}
-
-.login a {
+a {
   text-decoration: underline;
   color: #5f5fd4;
+}
+
+.dash-container {
+  margin: auto;
+  background: #2E2A2E;
+  max-width: 900px;
+  width: 90%;
+  padding: 50px 20px;
+  border-radius: 10px;
+  color: whitesmoke;
+}
+
+.dash-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dash-title h1 {
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+}
+
+.dash-title p {
+  width: 80%;
+  padding: 20px;
+}
+
+.dash-tiles {
+  margin: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dash-tiles .dash-tile {
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
+  border: 3px solid #5f5fd4;
+  max-width: 250px;
+  margin: 25px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+}
+
+.dash-tiles .dash-tile h5 {
+  text-align: center;
+  font-size: 16px;
+}
+
+.dash-tiles .dash-tile p {
+  font-size: 22px;
+}
+
+.form-container {
+  max-width: 1000px;
+}
+
+.form-container .create-member form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.form-container .create-member .inputs {
+  width: 300px;
+  margin: 15px;
+}
+
+.form-container .create-member .inputs label {
+  width: 300px;
+}
+
+.form-container .create-member .inputs input {
+  max-width: 300px;
+}
+
+.form-container .create-member .button {
+  margin: 0 auto;
+  width: 100%;
+  padding-top: 25px;
+}
+
+.form-container .create-member .button button {
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .form-container .create-member form {
+    flex-direction: column;
+  }
+
+  .form-container .create-member .inputs {
+    max-width: 300px;
+    width: 100%;
+    flex-wrap: nowrap;
+  }
 }
 
 body {
@@ -10870,6 +10984,7 @@ body {
 }
 
 main {
+  padding: 50px 20px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -10883,11 +10998,54 @@ main {
   width: 100%;
 }
 
+.errors {
+  color: #5f5fd4;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  padding: 25px;
+}
+
+.errors ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin: auto;
+}
+
+.logo {
+  margin: 0 auto;
+  max-width: 450px;
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+.logo img {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 250px;
+  display: block;
+}
+
+.logo h1 {
+  text-align: center;
+  font-weight: bold;
+  color: #5f5fd4;
+}
+
 button {
   background: #5f5fd4;
   color: whitesmoke;
   width: 150px;
   border: 0;
   border-radius: 5px;
+}
+
+p {
+  padding: 0;
+  margin: 0;
 }
 

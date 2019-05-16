@@ -31,6 +31,7 @@ class FakerUsers extends Seeder
             ]);
 
             DB::table('members')->insert([
+                'user_id' => $i,
                 'firstName' => $faker->firstname,
                 'lastName' => $faker->lastname,
                 'email' => $faker->email,
@@ -42,6 +43,7 @@ class FakerUsers extends Seeder
                 'DOB' => $faker->date,
                 'created_at' => $faker->date,
             ]);
+
 	    }
     }
 }

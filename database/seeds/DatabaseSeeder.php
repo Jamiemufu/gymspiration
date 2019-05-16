@@ -14,7 +14,9 @@ class DatabaseSeeder extends Seeder
         //call CreateRoles first
         $this->call(CreateRoles::class);
         $this->call(AdminUser::class);
-        $this->call(FakerUsers::class);
         $this->call(MembershipTypes::class);
+        $this->call(FakerUsers::class);
+        $this->call(SetSubscription::class);
+        
     }
 }

@@ -3,7 +3,7 @@
     <ul class="nav">
         <!-- logo to show on all -->
         <li class="nav-items">
-            <a class="logo" href="/">
+            <a class="sidebar-logo">
                 <img src="{{ asset('images/sidebar_logo.png') }}" alt="Gymspiration Logo">
             </a>
         </li>        
@@ -29,7 +29,7 @@
         @if (Auth::user() && Auth::user()->hasRole('admin'))
 
             <li class="nav-items">
-                <a href="{{ route('admin')}}" id="admin">
+                <a href="{{ route('dashboard')}}" id="admin">
                     <i class="fas fa-tachometer-alt"></i>Dashboard
                 </a>
             </li>
@@ -40,10 +40,23 @@
                         <i class="fas fa-users-cog"></i>Member Management<i class="fas fa-caret-down"></i>
                     </a>
                 </div>
+
                 <div class="dropdown-content" id="myDropdown">
-                    <a href="{{ route('createUser') }}" id="create"><i class="fas fa-user-plus"></i>Create User</a>
-                    <a href="#" id="edit"><i class="fas fa-user-tag"></i>Edit Users</a>
-                    <a href="#" id="deleteUser"><i class="fas fa-user-times"></i>Delete User</a>
+                    <a href="{{ route('viewMember') }}" id="view">
+                        <i class="fas fa-users"></i>View Members
+                    </a>
+
+                    <a href="{{ route('createMember') }}" id="create">
+                        <i class="fas fa-user-plus"></i>Create Member
+                    </a>
+
+                    <a href="{{ route('editMember') }}" id="edit">
+                        <i class="fas fa-user-tag"></i>Edit Members
+                    </a>
+
+                    <a href="{{ route('deleteMember') }}" id="deleteMember">
+                        <i class="fas fa-user-times"></i>Delete Member
+                    </a>
                 </div>
             </li>
 

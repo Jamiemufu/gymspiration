@@ -1,0 +1,64 @@
+.form-container {
+    margin: auto;
+    background: $sidebar-bg;
+    max-width: 500px;
+    width: 90%;
+    padding: 50px 10px;
+    border-radius: 10px;
+    color: $base-bg;
+
+    form {
+        margin: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+
+        label {
+            width: 100%;
+            max-width: 450px;
+        }
+
+        input[type='text'],
+        input[type='number'],
+        input[type='date'],
+        input[type='email'] {
+            margin-top: 5px;
+            width: 100%;
+            max-width: 450px;
+            padding: 5px;
+            outline: none;
+            border: 1px solid $base-color;
+            background: $base-color;
+            color: $base-bg;
+        }
+
+        ::-webkit-calendar-picker-indicator {
+            background: $base-color;
+        }
+
+        input[type="date"]::-webkit-input-placeholder{ 
+            visibility: hidden !important;
+        }
+
+        input::-webkit-calendar-picker-indicator{
+            display: none;
+        }
+
+        button {
+            padding: 7px;
+        }
+
+        span {
+            padding: 15px 15px 25px 15px;
+            color: $base-color;
+        }
+    }
+
+    .button {
+        padding-bottom: 25px;
+    }
+
+}

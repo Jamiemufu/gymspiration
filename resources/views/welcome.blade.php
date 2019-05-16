@@ -5,7 +5,7 @@
 
 <div class="flex-container">
     <div class="hero">
-        <img src="images/logo.png" alt="Gymspiration Logo">
+        <img src="{{ asset('images/logo.png') }}" alt="Gymspiration Logo">
     </div>
 </div>
 

@@ -5,11 +5,17 @@ const admin = document.getElementById('admin');
 const home = document.getElementById('home');
 const reports = document.getElementById('reports');
 const create = document.getElementById('create');
+const view = document.getElementById('view');
 const edit = document.getElementById('edit');
-const deleteUser = document.getElementById('delete');
+const deleteMember = document.getElementById('deleteMember');
+const links = document.getElementsByTagName('a');
 
-
-dropdown.addEventListener("click", function(_e){
+dropdown.addEventListener("click", function(_e) {
+    //loop through all links and remove any with active
+    for(let i = 0; i < links.length; i++)
+    {
+        links[i].classList.remove('active');
+    }
     myDropdown.classList.toggle('show');
     dropdown.classList.toggle('active');
   });
