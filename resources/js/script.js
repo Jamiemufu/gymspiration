@@ -12,6 +12,10 @@ const links = document.getElementsByTagName("a");
 const sidebarToggleOpen = document.getElementById("toggle-open");
 const sidebarToggleClose = document.getElementById("toggle-close");
 const navItems = document.getElementsByClassName("nav-items");
+const navContainer = document.getElementById("nav-container");
+const li = document.getElementsByTagName("li");
+const ul = document.getElementsByTagName("ul");
+const nav = document.getElementsByClassName("nav");
 
 // media query event handler
 if (matchMedia) {
@@ -27,18 +31,17 @@ function WidthChange(mq) {
         document.getElementById("nav-container").style.width = "250px";
         document.getElementById("toggle-close").style.display = "none";
         document.getElementById("toggle-open").style.display = "none";
+        document.getElementById("")
         // loop through nav items
-        for (let i = 0; i < navItems.length; i++) {
-            navItems[i].style.opacity = 1;
-        }
+        var i = fullWidth();
     } else {
+        // window width is under 600px
         document.getElementById("nav-container").style.width = "50px";
         document.getElementById("toggle-open").style.display = "block";
         document.getElementById("toggle-close").style.display = "none";
-         // loop through nav items
-         for (let i = 0; i < navItems.length; i++) {
-            navItems[i].style.opacity = 0;
-        }
+        // loop through nav items
+        var i;
+        ({ i, i } = minWidth(i));
     }
 }
  //toggle open sidebar
@@ -46,11 +49,9 @@ function WidthChange(mq) {
     document.getElementById("nav-container").style.width = "250px";
     document.getElementById("toggle-close").style.display = "block";
     document.getElementById("toggle-open").style.display = "none";
+    // loop through nav items
+    var i = fullWidth();
 
-    // loop through nav items to add opacity
-    for (let i = 0; i < navItems.length; i++) {
-        navItems[i].style.opacity = 1;
-    }
 });
 
     //toggle close
@@ -59,22 +60,60 @@ function WidthChange(mq) {
     document.getElementById("toggle-open").style.display = "block";
     document.getElementById("toggle-close").style.display = "none";
 
-    // loop through nav items
-    for (let i = 0; i < navItems.length; i++) {
-        navItems[i].style.opacity = 0;
-    }
-});
+    var i;
+        ({ i, i } = minWidth(i));
+    });
 
-dropdown.addEventListener("click", function(_e) {
+//if path is NOT /login
+
+  dropdown.addEventListener("click", function(_e) {
     //loop through all links and remove any with active
-    for (let i = 0; i < links.length; i++) {
+    for (var i = 0; i < links.length; i++) {
         links[i].classList.remove("active");
     }
     myDropdown.classList.toggle("show");
     dropdown.classList.toggle("active");
-});
+    });
+
 
 showSideBarActive();
+
+function minWidth(i) {
+    for (var i = 0; i < navItems.length; i++) {
+        navItems[i].style.opacity = 0;
+        navItems[i].style.width = "50px";
+    }
+    for (var i = 0; i < ul.length; i++) {
+        ul[i].style.width = "50px";
+    }
+    for (var i = 0; i < li.length; i++) {
+        li[i].style.width = "50px";
+    }
+    for (var i = 0; i < nav.length; i++) {
+        nav[i].style.width = "50px";
+    }
+    return { i, i };
+}
+
+function fullWidth() {
+    for (let i = 0; i < navItems.length; i++) {
+        navItems[i].style.opacity = 1;
+    }
+    for (var i = 0; i < navItems.length; i++) {
+        navItems[i].style.opacity = 1;
+        navItems[i].style.width = "250px";
+    }
+    for (var i = 0; i < ul.length; i++) {
+        ul[i].style.width = "250px";
+    }
+    for (var i = 0; i < li.length; i++) {
+        li[i].style.width = "250px";
+    }
+    for (var i = 0; i < nav.length; i++) {
+        nav[i].style.width = "250px";
+    }
+    return i;
+}
 
 //toggles active class depending on url
 function showSideBarActive() {

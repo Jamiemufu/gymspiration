@@ -9,6 +9,7 @@
                 <p>Please fill in any fields you would like to edit and update</p>
                 <p>Leave fields blank if you don't want to update it</p>
             </div>
+            {{-- error messages --}}
             @if ($errors->any())
                 <div class="errors">
                     <ul>
@@ -18,6 +19,7 @@
                     </ul>
                 </div>
             @endif
+            {{-- form with patch spoof --}}
             <form method="POST" action="{{ route('updateMember',  $member->id) }}">
                 @method('PATCH')
                 @csrf
@@ -66,6 +68,7 @@
                         <input type="text" name="postcode" value="{{ $member->postcode }}" required>
                     </label>
                 </div>
+                {{-- check for null --}}
                 <div class="inputs">
                     <label for="dob">Date of Birth:
                         @if (is_null($member->DOB))
@@ -76,6 +79,7 @@
                         <input type="date" name="dob" value="{{ $member->DOB }}">
                     </label>
                 </div>
+                {{-- check if set and not empty --}}
                 <div class="inputs">
                     <label for="membership">Select a membership type:
                         @if (isset($member->membership->type) && !empty(($member->membership->type)))
@@ -85,8 +89,8 @@
                         @endif
                         <select name="membership" id="membership">
                             <option value="3" selected disabled hidden>Select</option>
-                            <option value="1">Monthly</option>
-                            <option value="2">Yearly</option>
+                            <option value="1">Monthly £14.99</option>
+                            <option value="2">Yearly £99.99</option>
                             <option value="3">No Membership</option>
                         </select>
                     </label>

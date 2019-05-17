@@ -7,8 +7,10 @@
                 <img src="{{ asset('images/logo.png') }}" alt="Gymspiration Logo">
                 <h1>GYMSPIRATION</h1>
             </div>
+            {{-- form --}}
             <form method="POST" action="{{ route('login') }}">
                 @csrf
+                {{-- error messages --}}
                 @error('username')
                     <span class="" role="alert">
                         <strong>{{ $message }}</strong>

@@ -10777,7 +10777,20 @@ a.text-dark:focus {
     width: 50px;
   }
 
+  .nav-container .nav {
+    width: 50px;
+  }
+
+  .nav-container .nav ul {
+    width: 50px;
+  }
+
+  .nav-container .nav li {
+    width: 50px;
+  }
+
   .nav-container .nav-items {
+    width: 25px;
     opacity: 0;
   }
 
@@ -11047,6 +11060,34 @@ a {
   outline: none;
 }
 
+.mobile {
+  padding: 0;
+  display: none;
+}
+
+.mobile .edit {
+  text-align: left;
+  display: block;
+  padding-top: 3px;
+  padding-left: 8px;
+}
+
+.mobile .delete form {
+  width: 100%;
+  text-align: left;
+  align-items: flex-start;
+}
+
+.mobile span {
+  color: #5f5fd4;
+  font-weight: bold;
+}
+
+.mobile hr {
+  background: whitesmoke;
+  color: whitesmoke;
+}
+
 .membership {
   text-transform: capitalize;
 }
@@ -11067,6 +11108,16 @@ table th {
 
 table i {
   font-size: 14px;
+}
+
+@media (max-width: 800px) {
+  .mobile {
+    display: block;
+  }
+
+  .desktop {
+    display: none;
+  }
 }
 
 .form-container {
@@ -11139,6 +11190,8 @@ table i {
 }
 
 .reports .dash-tile form button {
+  outline: none;
+  border: none;
   margin-top: 10px;
 }
 

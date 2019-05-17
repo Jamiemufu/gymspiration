@@ -6,11 +6,13 @@
         <img src="{{ asset('images/sidebar_logo.png') }}" alt="Gymspiration Logo">
         <h1>Members</h1>
     </div>
+    {{-- error messages --}}
     @if (session('status'))
         <div class="errors">
             {{ session('status') }}
         </div>
-        @endif
+    @endif
+    {{-- search bar --}}
     <div class="search">
         <form action="{{ route('search') }}" method="POST">
             @csrf
@@ -20,14 +22,15 @@
             <button>Search</button>
         </form>
     </div>
-    
+    {{-- check if members is set and if emtpy display errors --}}
     @if (isset($members))
         @if($members->isEmpty())
             <div class="errors">
                 No Results Found
             </div>
         @else
-            <div class="members">
+            {{-- desktop only view --}}
+            <div class="members desktop">
                 <table>
                     <tr>
                         <th>Name:</th>
@@ -44,6 +47,7 @@
                         <td>
                             {{ $member->email }}
                         </td>
+                        {{-- check if membership isset --}}
                         <td class="membership">
                             @if(isset($member->membership->type))
                                 {{ $member->membership->type }}
@@ -57,9 +61,11 @@
                             </a>
                         </td>
                         <td>
+                            {{-- form with delete spoof --}}
                             <form method="POST" action="{{ action('MemberController@destroy', $member->id) }}">
                                 @method('DELETE')
                                 @csrf
+                                {{-- confirm alert --}}
                                 <button onclick="return confirm('Are you sure you want to delete this user?');">
                                 <i class="fas fa-minus-circle"></i> Delete
                                 </button>
@@ -69,6 +75,46 @@
                     @endforeach
                 </table>
             </div>
+            {{-- mobile only view --}}
+            <div class="members mobile">
+                 @foreach ($members as $member)
+                    <table>
+                        <tr><td><span>Name:</span> {{ $member->firstName }} {{ $member->lastName }}</td></tr>
+                        <tr><td><span>Email:</span> {{ $member->email }} </td></tr>
+                        <tr>
+                            <td>
+                                <span>Membership:</span>
+                                @if (isset($member->membership->type))
+                                    {{ $member->membership->type }}
+                                @else
+                                    No membership
+                                @endif
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="edit">
+                                <a href="{{ route('editMember', ['id' => $member->id]) }}">
+                                    <i class="fas fa-edit"></i> Edit
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="delete">
+                                {{-- form with delete spoof --}}
+                                <form method="POST" action="{{ action('MemberController@destroy', $member->id) }}">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button onclick="return confirm('Are you sure you want to delete this user?');">
+                                        <i class="fas fa-minus-circle"></i> Delete
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr>
+                 @endforeach
+            </div>
+        </div>
         @endif
     @endif
 </div>

@@ -11,12 +11,14 @@
             <h1>Reports</h1>
             <p>Here you can download csv's below</p>
         </div>
+        {{-- flash message --}}
         @if (session('status'))
             <div class="errors">
                 {{ session('status') }}
             </div>
         @endif
         <div class="dash-tiles">
+            {{-- all members download --}}
             <div class="dash-tile">
                 <div class="dash-tile__title">
                     <h5>All members</h5>
@@ -30,6 +32,7 @@
                     </a>
                 </div>
             </div>
+            {{-- monhtly members download --}}
             <div class="dash-tile">
                 <div class="dash-tile__title">
                     <h5>Monthly Members</h5>
@@ -46,6 +49,7 @@
                     <button>Download</button>
                 </form>
             </div>
+            {{-- monthly memberships download --}}
             <div class="dash-tile">
                 <div class="dash-tile__title">
                     <h5>Monthly Memberships</h5>
@@ -59,6 +63,7 @@
                     </a>
                 </div>
             </div>
+            {{-- yealy memberships download --}}
             <div class="dash-tile">
                 <div class="dash-tile__title">
                     <h5>Yearly Memberships</h5>

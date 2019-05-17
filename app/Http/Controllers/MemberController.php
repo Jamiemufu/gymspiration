@@ -85,9 +85,9 @@ class MemberController extends Controller {
 	 * @return void
 	 */
 	public function search(Request $request) {
-
+		//get value from input
 		$name = $request->input('search');
-
+		// use value and get return
 		$members = \App\Member::searchNames($name)->get();
 
 		return view('admin.viewMembers')->with('members', $members);
@@ -110,6 +110,7 @@ class MemberController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function edit($id) {
+		//find by id
 		$member = \App\Member::with('membership')->find($id);
 
 		//format DOB
@@ -166,6 +167,7 @@ class MemberController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function destroy($id) {
+		// find by id
 		$member = \App\Member::find($id);
 
 		$member->delete();

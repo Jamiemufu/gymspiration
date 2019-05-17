@@ -93,6 +93,8 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //declare consts
 var myDropdown = document.getElementById("myDropdown");
 var dropdown = document.getElementById("dropdown");
@@ -106,7 +108,11 @@ var deleteMember = document.getElementById("deleteMember");
 var links = document.getElementsByTagName("a");
 var sidebarToggleOpen = document.getElementById("toggle-open");
 var sidebarToggleClose = document.getElementById("toggle-close");
-var navItems = document.getElementsByClassName("nav-items"); // media query event handler
+var navItems = document.getElementsByClassName("nav-items");
+var navContainer = document.getElementById("nav-container");
+var li = document.getElementsByTagName("li");
+var ul = document.getElementsByTagName("ul");
+var nav = document.getElementsByClassName("nav"); // media query event handler
 
 if (matchMedia) {
   var mq = window.matchMedia("(min-width: 600px)");
@@ -120,19 +126,22 @@ function WidthChange(mq) {
     // window width is at least 600px
     document.getElementById("nav-container").style.width = "250px";
     document.getElementById("toggle-close").style.display = "none";
-    document.getElementById("toggle-open").style.display = "none"; // loop through nav items
+    document.getElementById("toggle-open").style.display = "none";
+    document.getElementById(""); // loop through nav items
 
-    for (var i = 0; i < navItems.length; i++) {
-      navItems[i].style.opacity = 1;
-    }
+    var i = fullWidth();
   } else {
+    // window width is under 600px
     document.getElementById("nav-container").style.width = "50px";
     document.getElementById("toggle-open").style.display = "block";
     document.getElementById("toggle-close").style.display = "none"; // loop through nav items
 
-    for (var _i = 0; _i < navItems.length; _i++) {
-      navItems[_i].style.opacity = 0;
-    }
+    var i;
+
+    var _minWidth = minWidth(i);
+
+    i = _minWidth.i;
+    i = _minWidth.i;
   }
 } //toggle open sidebar
 
@@ -140,22 +149,23 @@ function WidthChange(mq) {
 sidebarToggleOpen.addEventListener("click", function (e) {
   document.getElementById("nav-container").style.width = "250px";
   document.getElementById("toggle-close").style.display = "block";
-  document.getElementById("toggle-open").style.display = "none"; // loop through nav items to add opacity
+  document.getElementById("toggle-open").style.display = "none"; // loop through nav items
 
-  for (var i = 0; i < navItems.length; i++) {
-    navItems[i].style.opacity = 1;
-  }
+  var i = fullWidth();
 }); //toggle close
 
 sidebarToggleClose.addEventListener("click", function (e) {
   document.getElementById("nav-container").style.width = "50px";
   document.getElementById("toggle-open").style.display = "block";
-  document.getElementById("toggle-close").style.display = "none"; // loop through nav items
+  document.getElementById("toggle-close").style.display = "none";
+  var i;
 
-  for (var i = 0; i < navItems.length; i++) {
-    navItems[i].style.opacity = 0;
-  }
-});
+  var _minWidth2 = minWidth(i);
+
+  i = _minWidth2.i;
+  i = _minWidth2.i;
+}); //if path is NOT /login
+
 dropdown.addEventListener("click", function (_e) {
   //loop through all links and remove any with active
   for (var i = 0; i < links.length; i++) {
@@ -165,7 +175,56 @@ dropdown.addEventListener("click", function (_e) {
   myDropdown.classList.toggle("show");
   dropdown.classList.toggle("active");
 });
-showSideBarActive(); //toggles active class depending on url
+showSideBarActive();
+
+function minWidth(i) {
+  for (var i = 0; i < navItems.length; i++) {
+    navItems[i].style.opacity = 0;
+    navItems[i].style.width = "50px";
+  }
+
+  for (var i = 0; i < ul.length; i++) {
+    ul[i].style.width = "50px";
+  }
+
+  for (var i = 0; i < li.length; i++) {
+    li[i].style.width = "50px";
+  }
+
+  for (var i = 0; i < nav.length; i++) {
+    nav[i].style.width = "50px";
+  }
+
+  return _defineProperty({
+    i: i
+  }, "i", i);
+}
+
+function fullWidth() {
+  for (var _i = 0; _i < navItems.length; _i++) {
+    navItems[_i].style.opacity = 1;
+  }
+
+  for (var i = 0; i < navItems.length; i++) {
+    navItems[i].style.opacity = 1;
+    navItems[i].style.width = "250px";
+  }
+
+  for (var i = 0; i < ul.length; i++) {
+    ul[i].style.width = "250px";
+  }
+
+  for (var i = 0; i < li.length; i++) {
+    li[i].style.width = "250px";
+  }
+
+  for (var i = 0; i < nav.length; i++) {
+    nav[i].style.width = "250px";
+  }
+
+  return i;
+} //toggles active class depending on url
+
 
 function showSideBarActive() {
   if (window.location.href.indexOf("member") > -1) {
@@ -189,7 +248,7 @@ function showSideBarActive() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Web_Dev\gym\resources\js\script.js */"./resources/js/script.js");
+module.exports = __webpack_require__(/*! /Users/jamieevans/Documents/gymspiration/resources/js/script.js */"./resources/js/script.js");
 
 
 /***/ })

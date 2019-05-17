@@ -118,10 +118,23 @@
 
         width: 50px;
 
+        .nav {
+            width: 50px;
+
+            ul {
+                width: 50px;
+            }
+
+            li {
+                width: 50px;
+            }
+        }
+
         .nav-items {
+            width: 25px;
             opacity: 0;
         }
-        
+
         .sidebar-toggle-open {
             position: fixed;
             display: block;

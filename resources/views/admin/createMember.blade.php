@@ -7,6 +7,7 @@
                 <img src="{{ asset('images/logo.png') }}" alt="Gymspiration Logo">
                 <h1>Create New Member</h1>
             </div>
+            {{-- error messages --}}
             @if ($errors->any())
                 <div class="errors">
                     <ul>
@@ -16,6 +17,7 @@
                     </ul>
                 </div>
             @endif
+            {{-- form --}}
             <form method="POST" action="{{ route('storeMember') }}">
                 @csrf
                 <div class="inputs">
@@ -77,8 +79,8 @@
                     <label for="membership">Select a membership type: (yearly/monthly)
                         <select name="membership" id="membership">
                             <option value="3" selected disabled hidden>Select</option>
-                            <option value="1">Monthly</option>
-                            <option value="2">Yearly</option>
+                            <option value="1">Monthly £14.99</option>
+                            <option value="2">Yearly £99.99</option>
                             <option value="3">No Membership</option>
                         </select>
                     </label>
