@@ -16,9 +16,11 @@
 //pages
 @import 'pages/welcome.scss';
 @import 'pages/login.scss';
-@import 'pages/dashboard.scss';
+@import 'pages/dashboard-general.scss';
 @import 'pages/createMember.scss';
 @import 'pages/viewMembers.scss';
+@import 'pages/editMember.scss';
+@import 'pages/reports.scss';
 
 // General Styles
 
@@ -83,6 +85,10 @@ main {
         text-align: center;
         font-weight: bold;
         color: $base-color;
+    }
+
+    p {
+        text-align: center;
     }
 }
 

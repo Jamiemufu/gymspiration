@@ -1,0 +1,32 @@
+.reports {
+
+    .dash-tile {
+        justify-content: space-around;
+        height: 175px;
+
+        h5 {
+            padding: none;
+            margin: none;
+        }
+
+        i {
+            margin: auto;
+            font-size: 26px;
+        }
+
+
+        form {
+
+            select {
+                width: 100px;
+                padding: 0;
+                height: 30px
+            }
+
+            button {
+                margin-top: 10px;
+            }
+
+        }
+    }
+}

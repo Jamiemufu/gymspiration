@@ -10835,7 +10835,7 @@ form button {
 
 form span {
   padding: 15px 15px 25px 15px;
-  color: whitesmoke;
+  color: #5f5fd4;
 }
 
 .button {
@@ -10856,6 +10856,15 @@ form span {
 .login {
   margin: auto;
   max-width: 600px;
+}
+
+.login label {
+  width: 300px;
+}
+
+.login input[type=text],
+.login input[type=email] {
+  max-width: 300px;
 }
 
 .username {
@@ -10879,6 +10888,7 @@ form span {
 }
 
 .checkbox label {
+  width: auto;
   text-align: center;
   padding-left: 5px;
 }
@@ -10921,6 +10931,7 @@ a {
 }
 
 .dash-title p {
+  text-align: center;
   width: 80%;
   padding: 20px;
 }
@@ -10961,6 +10972,10 @@ a {
 
 .dash-tiles .dash-tile p {
   font-size: 22px;
+}
+
+.dash-tiles .dash-tile button {
+  padding: 4px;
 }
 
 .form-container {
@@ -11054,6 +11069,79 @@ table i {
   font-size: 14px;
 }
 
+.form-container {
+  max-width: 1000px;
+}
+
+.form-container .edit-member form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.form-container .edit-member .inputs {
+  width: 300px;
+  margin: 15px;
+}
+
+.form-container .edit-member .inputs label {
+  width: 300px;
+}
+
+.form-container .edit-member .inputs input {
+  max-width: 300px;
+}
+
+.form-container .edit-member .button {
+  margin: 0 auto;
+  width: 100%;
+  padding-top: 40px;
+}
+
+.form-container .edit-member .button button {
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .form-container .edit-member form {
+    flex-direction: column;
+  }
+
+  .form-container .edit-member .inputs {
+    max-width: 300px;
+    width: 100%;
+    flex-wrap: nowrap;
+  }
+}
+
+.reports .dash-tile {
+  justify-content: space-around;
+  height: 175px;
+}
+
+.reports .dash-tile h5 {
+  padding: none;
+  margin: none;
+}
+
+.reports .dash-tile i {
+  margin: auto;
+  font-size: 26px;
+}
+
+.reports .dash-tile form select {
+  width: 100px;
+  padding: 0;
+  height: 30px;
+}
+
+.reports .dash-tile form button {
+  margin-top: 10px;
+}
+
 body {
   background: #5f5fd4;
   min-height: 100vh;
@@ -11117,6 +11205,10 @@ main {
   text-align: center;
   font-weight: bold;
   color: #5f5fd4;
+}
+
+.logo p {
+  text-align: center;
 }
 
 button {

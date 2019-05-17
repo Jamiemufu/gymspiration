@@ -2,23 +2,63 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
 use Illuminate\Support\Facades\DB;
 
-class Member extends Model
-{
+class Member extends Authenticatable {
+	use Notifiable;
 
-    public function membership()
-    {
-        return $this->hasOne('App\Membership', 'id', 'membership_id');
-    }
+	protected $fillable = [
+		'name', 'email', 'password',
+	];
 
-    public function scopeSearchNames($query, $name)
-    {
-        //concat first_name and last_name and search
-        return $query->where(DB::raw('concat(firstName," ",lastName)'), 'LIKE', '%'.$name.'%');
-    }
+	/**
+	 * The attributes that should be hidden for arrays.
+	 *
+	 * @var array
+	 */
+	protected $hidden = [
+		'password', 'remember_token',
+	];
 
-    public $timestamps = false;
-    
+	/**
+	 * The attributes that should be cast to native types.
+	 *
+	 * @var array
+	 */
+	
+	/**
+	 * @return mixed
+	 */
+	public function membership() {
+		return $this->hasOne('App\Membership', 'id', 'membership_id');
+	}
+
+	/**
+	 * @param $query
+	 * @param $name
+	 * @return mixed
+	 */
+	public function scopeSearchNames($query, $name) {
+		//concat first_name and last_name and query
+		return $query->where(DB::raw('concat(firstName," ",lastName)'), 'LIKE', '%' . $name . '%');
+	}
+
+	/**
+	 * checks role
+	 *
+	 * @param  mixed $role
+	 *
+	 * @return void
+	 */
+	public function hasRole($role) {
+		if ($this->roles()->where('name', $role)->first()) {
+			return true;
+		}
+
+		return false;
+	}
+
 }

@@ -94,24 +94,53 @@
 /***/ (function(module, exports) {
 
 //declare consts
-var myDropdown = document.getElementById('myDropdown');
-var dropdown = document.getElementById('dropdown');
-var admin = document.getElementById('admin');
-var home = document.getElementById('home');
-var reports = document.getElementById('reports');
-var create = document.getElementById('create');
-var view = document.getElementById('view');
-var edit = document.getElementById('edit');
-var deleteMember = document.getElementById('deleteMember');
-var links = document.getElementsByTagName('a');
-var sidebarToggleOpen = document.getElementById('toggle-open');
-var sidebarToggleClose = document.getElementById('toggle-close');
-var navItems = document.getElementsByClassName('nav-items'); //toggle mobile burger
+var myDropdown = document.getElementById("myDropdown");
+var dropdown = document.getElementById("dropdown");
+var admin = document.getElementById("admin");
+var home = document.getElementById("home");
+var reports = document.getElementById("reports");
+var create = document.getElementById("create");
+var view = document.getElementById("view");
+var edit = document.getElementById("edit");
+var deleteMember = document.getElementById("deleteMember");
+var links = document.getElementsByTagName("a");
+var sidebarToggleOpen = document.getElementById("toggle-open");
+var sidebarToggleClose = document.getElementById("toggle-close");
+var navItems = document.getElementsByClassName("nav-items"); // media query event handler
+
+if (matchMedia) {
+  var mq = window.matchMedia("(min-width: 600px)");
+  mq.addListener(WidthChange);
+  WidthChange(mq);
+} // media query change
+
+
+function WidthChange(mq) {
+  if (mq.matches) {
+    // window width is at least 600px
+    document.getElementById("nav-container").style.width = "250px";
+    document.getElementById("toggle-close").style.display = "none";
+    document.getElementById("toggle-open").style.display = "none"; // loop through nav items
+
+    for (var i = 0; i < navItems.length; i++) {
+      navItems[i].style.opacity = 1;
+    }
+  } else {
+    document.getElementById("nav-container").style.width = "50px";
+    document.getElementById("toggle-open").style.display = "block";
+    document.getElementById("toggle-close").style.display = "none"; // loop through nav items
+
+    for (var _i = 0; _i < navItems.length; _i++) {
+      navItems[_i].style.opacity = 0;
+    }
+  }
+} //toggle open sidebar
+
 
 sidebarToggleOpen.addEventListener("click", function (e) {
   document.getElementById("nav-container").style.width = "250px";
   document.getElementById("toggle-close").style.display = "block";
-  document.getElementById("toggle-open").style.display = "none"; // loop through nav items
+  document.getElementById("toggle-open").style.display = "none"; // loop through nav items to add opacity
 
   for (var i = 0; i < navItems.length; i++) {
     navItems[i].style.opacity = 1;
@@ -130,24 +159,24 @@ sidebarToggleClose.addEventListener("click", function (e) {
 dropdown.addEventListener("click", function (_e) {
   //loop through all links and remove any with active
   for (var i = 0; i < links.length; i++) {
-    links[i].classList.remove('active');
+    links[i].classList.remove("active");
   }
 
-  myDropdown.classList.toggle('show');
-  dropdown.classList.toggle('active');
+  myDropdown.classList.toggle("show");
+  dropdown.classList.toggle("active");
 });
 showSideBarActive(); //toggles active class depending on url
 
 function showSideBarActive() {
   if (window.location.href.indexOf("member") > -1) {
-    myDropdown.classList.add('show');
-    dropdown.classList.add('active');
+    myDropdown.classList.add("show");
+    dropdown.classList.add("active");
   } else if (window.location.href.indexOf("report") > -1) {
-    reports.classList.add('active');
+    reports.classList.add("active");
   } else if (window.location.pathname == "/") {
-    home.classList.add('active');
+    home.classList.add("active");
   } else if (window.location.pathname == "/admin") {
-    admin.classList.add('active');
+    admin.classList.add("active");
   }
 }
 
@@ -160,7 +189,7 @@ function showSideBarActive() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/jamieevans/Documents/gymspiration/resources/js/script.js */"./resources/js/script.js");
+module.exports = __webpack_require__(/*! D:\Web_Dev\gym\resources\js\script.js */"./resources/js/script.js");
 
 
 /***/ })

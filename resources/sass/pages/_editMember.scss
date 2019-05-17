@@ -1,0 +1,54 @@
+//create member
+.form-container {
+
+    max-width: 1000px;
+
+    .edit-member     {
+
+        form {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .inputs {
+            width: 300px;
+            margin: 15px;
+
+            label {
+                width: 300px;
+            }
+            input {
+                max-width: 300px;
+            }
+        }
+
+        .button {
+            margin: 0 auto;
+            width: 100%;
+            padding-top: 40px;
+
+            button {
+                display: block;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 900px) {
+
+            form {
+                flex-direction: column;
+            }
+
+           
+            .inputs {
+                max-width: 300px;
+                width: 100%;
+                flex-wrap: nowrap;
+            }
+        }
+    }
+
+}
