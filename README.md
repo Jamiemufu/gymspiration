@@ -11,7 +11,9 @@ Clone Repostiory into suitable directory
 4) Set the application key - php artisan key:generate
   **important** set the admin email, password in **.env** username is **admin**
 5) This application comes with some test data generated via Faker
-6) Migrate and Seed the databases - php artisan migrate then php artisan db:seed
+6) Migrate and Seed the database - php artisan migrate then php artisan db:seed
+	**if you want faker generated members un-comment from seed DatabaseSeeder**
+	**scenario will install with no test members by default**
 7) If any errors occur, please check correct database credentials in the .env file
 8) install npm if developing or testing
 9) npm run watch to compile your js/sass

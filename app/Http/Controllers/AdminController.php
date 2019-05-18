@@ -63,28 +63,19 @@ class AdminController extends Controller {
 	public function exportAllMembers() {
 		//get all members
 		$members = \App\Member::with('membership')->get(); // All Members
-		//new csv
-		$csvExporter = new \Laracsv\Export();
-		//build and download
-		return $csvExporter
-			->build($members,
-				[
-					'firstName',
-					'lastName',
-					'email',
-					'address_line_1',
-					'address_line_2',
-					'town',
-					'county',
-					'postcode',
-					'phone',
-					'DOB',
-					'membership_id',
-					'membership.type',
-					'created_at',
-				])
-			->download('all_members.csv');
-
+		//create csv if not empty
+		if ($members->isNotEmpty()) {
+			//create new csv
+			$csvExporter = new \Laracsv\Export();
+			//build and download
+			return $csvExporter
+				->build($members,
+					['firstName', 'lastName', 'email', 'address_line_1', 'address_line_2', 'town', 'county', 'postcode', 'phone', 'DOB', 'membership.type' => 'membership type', 'membership.price' => 'Price'])
+				->download('all_members.csv');
+		} else {
+			//redirect to reports with message
+			return redirect()->action('AdminController@reports')->with('status', 'There is no data to download');
+		}
 	}
 
 	/**
@@ -95,12 +86,18 @@ class AdminController extends Controller {
 	public function exportMonthType() {
 		//we know membership_id 1 is monhtly
 		$month = \App\Member::with('membership')->where('membership_id', 1)->get();
-		//new csv
-		$csvExporter = new \Laracsv\Export();
-		//build and download
-		return $csvExporter
-			->build($month, ['firstName', 'lastName', 'membership.type' => 'membership type', 'membership.price' => 'price'])->download('monthly_members.csv');
+		//create csv if not empt
+		if ($month->isNotEmpty()) {
+			// create new csv
+			$csvExporter = new \Laracsv\Export();
+			//build and download
+			return $csvExporter
+				->build($month, ['firstName', 'lastName', 'membership.type' => 'membership type', 'membership.price' => 'price'])->download('monthly_members.csv');
 
+		} else {
+			//redirect to reports with message
+			return redirect()->action('AdminController@reports')->with('status', 'There are no monthly memberships');
+		}
 	}
 
 	/**
@@ -111,12 +108,17 @@ class AdminController extends Controller {
 	public function exportYearlyType() {
 		//we know membership_id 2 is yearly
 		$year = \App\Member::with('membership')->where('membership_id', 2)->get();
-		//new export
-		$csvExporter = new \Laracsv\Export();
-
-		return $csvExporter
-			->build($year, ['firstName', 'lastName', 'membership.type' => 'membership type', 'membership.price' => 'price'])->download('yearly_members.csv');
-
+		//create csv if not empty
+		if ($year->isNotEmpty()) {
+			//new export
+			$csvExporter = new \Laracsv\Export();
+			//build and download
+			return $csvExporter
+				->build($year, ['firstName', 'lastName', 'membership.type' => 'membership type', 'membership.price' => 'price'])->download('yearly_members.csv');
+		} else {
+			//redirect to reports with message
+			return redirect()->action('AdminController@reports')->with('status', 'There are no yearly memberships');
+		}
 	}
 
 	/**
@@ -131,27 +133,19 @@ class AdminController extends Controller {
 		$month = $request->month;
 		//use month
 		$members = \App\Member::with('membership')->whereMonth('created_at', $month)->get();
-		//new export
-		$csvExporter = new \Laracsv\Export();
-		//build and download
-		return $csvExporter
-			->build($members,
-				[
-					'firstName',
-					'lastName',
-					'email',
-					'address_line_1',
-					'address_line_2',
-					'town',
-					'county',
-					'postcode',
-					'phone',
-					'DOB',
-					'membership_id',
-					'membership.type' => 'membership type',
-					'created_at',
-				])->download('members_by_month.csv');
-
+		//create csv if not empty
+		if ($members->isNotEmpty()) {
+			//new export
+			$csvExporter = new \Laracsv\Export();
+			//build and download
+			return $csvExporter
+				->build($members,
+					['firstName', 'lastName', 'email', 'address_line_1', 'address_line_2', 'town', 'county', 'postcode', 'phone', 'DOB', 'membership.type' => 'membership type', 'membership.price' => 'Price', 'created_at'])
+				->download('members_by_month.csv');
+		} else {
+			//redirect to reports with message
+			return redirect()->action('AdminController@reports')->with('status', 'There are no members by this month');
+		}
 	}
 
 }

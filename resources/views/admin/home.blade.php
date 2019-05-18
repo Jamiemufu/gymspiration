@@ -17,52 +17,63 @@
             {{ session('status') }}
         </div>
     @endif
-    <div class="dash-tiles">
-        {{-- monthly stats --}}
-        <div class="dash-tile">
-            <div class="dash-tile__title">
-                <h5>Monthly Revenue</h5>
+    @if (isset($monthlyStats, $yearlyStats, $member))
+        <div class="dash-tiles">
+            {{-- monthly stats --}}
+            <div class="dash-tile">
+                <div class="dash-tile__title">
+                    <h5>Monthly Revenue</h5>
+                </div>
+                <div>
+                    <p>&pound;{{ array_sum($monthlyStats) }}</p>
+                </div>
             </div>
-            <div>
-                <p>&pound;{{ array_sum($monthlyStats) }}</p>
+            {{-- monthly members --}}
+            <div class="dash-tile">
+                <div class="dash-tile__title">
+                    <h5>Monthly Members</h5>
+                </div>
+                <div>
+                    <p>{{ count($monthlyStats) }}</p>
+                </div>
+            </div>
+            {{-- annual stats --}}
+            <div class="dash-tile">
+                <div class="dash-tile__title">
+                    <h5>Annual Revenue</h5>
+                </div>
+                <div>
+                    <p>&pound;{{ array_sum($yearlyStats) }}</p>
+                </div>
+            </div>
+            {{-- yearly members --}}
+            <div class="dash-tile">
+                <div class="dash-tile__title">
+                    <h5>Yearly Members</h5>
+                </div>
+                <div>
+                    <p>{{ count($yearlyStats) }}</p>
+                </div>
+            </div>
+            {{-- latest member --}}
+            <div class="dash-tile members">
+                <div class="dash-tile__title">
+                    <h5>Latest Member</h5>
+                </div>
+                <div>
+                    <p>{{ $member->firstName }} {{ $member->lastName }} </p>
+                </div>
             </div>
         </div>
-        {{-- monthly members --}}
-        <div class="dash-tile">
-            <div class="dash-tile__title">
-                <h5>Monthly Members</h5>
-            </div>
-            <div>
-                <p>{{ count($monthlyStats) }}</p>
-            </div>
-        </div>
-        {{-- annual stats --}}
-        <div class="dash-tile">
-            <div class="dash-tile__title">
-                <h5>Annual Revenue</h5>
-            </div>
-            <div>
-                <p>&pound;{{ array_sum($yearlyStats) }}</p>
+    @else
+        <div class="dash-tiles">
+            {{-- monthly stats --}}
+            <div class="dash-tile">
+                <div class="dash-tile__title">
+                    <h5>There is no member data to generate highlights</h5>
+                </div>
             </div>
         </div>
-        {{-- yearly members --}}
-        <div class="dash-tile">
-            <div class="dash-tile__title">
-                <h5>Yearly Members</h5>
-            </div>
-            <div>
-                <p>{{ count($yearlyStats) }}</p>
-            </div>
-        </div>
-        {{-- latest member --}}
-        <div class="dash-tile members">
-            <div class="dash-tile__title">
-                <h5>Latest Member</h5>
-            </div>
-            <div>
-                <p>{{ $member->firstName }} {{ $member->lastName }} </p>
-            </div>
-        </div>
-    </div>
+    @endif
 </div>
 @endsection

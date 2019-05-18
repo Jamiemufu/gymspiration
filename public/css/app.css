@@ -11183,16 +11183,23 @@ table i {
   font-size: 26px;
 }
 
-.reports .dash-tile form select {
-  width: 100px;
-  padding: 0;
-  height: 30px;
-}
-
-.reports .dash-tile form button {
+.reports .dash-tile button {
   outline: none;
   border: none;
   margin-top: 10px;
+}
+
+.reports .dash-tile form select {
+  width: 100px;
+  padding: 0;
+  height: 25px;
+  background: #5f5fd4;
+  color: whitesmoke;
+}
+
+.reports .dash-tile form select option {
+  background: #5f5fd4;
+  color: whitesmoke;
 }
 
 .dash-container {
@@ -11305,6 +11312,8 @@ main {
 }
 
 .errors ul {
+  -webkit-text-decoration: center;
+          text-decoration: center;
   list-style: none;
   margin: 0;
   padding: 0;

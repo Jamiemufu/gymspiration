@@ -41,11 +41,6 @@
                     </label>
                 </div>
                 <div class="inputs">
-                    <label for="email">Email:(*required)
-                        <input type="text" name="address_line_1" required>
-                    </label>
-                </div>
-                <div class="inputs">
                     <label for="address_line_1">Address Line 1: (*required)
                         <input type="text" name="address_line_1" required>
                     </label>

@@ -14,19 +14,25 @@
             font-size: 26px;
         }
 
+       button {
+                outline: none;
+                border: none;
+                margin-top: 10px;
+            }
 
         form {
 
             select {
                 width: 100px;
                 padding: 0;
-                height: 30px
-            }
+                height: 25px;
+                background: $base-color;
+                color: $base-bg;
 
-            button {
-                outline: none;
-                border: none;
-                margin-top: 10px;
+                option {
+                    background: $base-color;
+                    color: $base-bg;
+                }
             }
 
         }
