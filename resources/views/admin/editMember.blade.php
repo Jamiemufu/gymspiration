@@ -24,13 +24,13 @@
                 @method('PATCH')
                 @csrf
                 <div class="inputs">
-                    <label for="firstname">Firstname: (*required)
-                        <input type="text" name="firstname" value="{{ $member->firstName }}" required autofocus>
+                    <label for="firstName">Firstname: (*required)
+                        <input type="text" name="firstName" value="{{ $member->firstName }}" required autofocus>
                     </label>
                 </div>
                 <div class="inputs">
-                    <label for="lastname">Lastname: (*required)
-                        <input type="text" name="lastname" value="{{ $member->lastName }}" required>
+                    <label for="lastName">Lastname: (*required)
+                        <input type="text" name="lastName" value="{{ $member->lastName }}" required>
                     </label>
                 </div>
                 <div class="inputs">
@@ -39,8 +39,8 @@
                     </label>
                 </div>
                 <div class="inputs">
-                    <label for="phone_number">Phone Number:
-                        <input type="text" name="phone_number" value="{{ $member->phone }}">
+                    <label for="phone">Phone Number:
+                        <input type="text" name="phone" value="{{ $member->phone }}">
                     </label>
                 </div>
                 <div class="inputs">
@@ -70,24 +70,24 @@
                 </div>
                 {{-- check for null --}}
                 <div class="inputs">
-                    <label for="dob">Date of Birth:
+                    <label for="DOB">Date of Birth:
                         @if (is_null($member->DOB))
                             No data stored
                         @else
                             {{ $member->DOB }}
                         @endif
-                        <input type="date" name="dob" value="{{ $member->DOB }}">
+                        <input type="date" name="DOB" value="{{ $member->DOB }}">
                     </label>
                 </div>
                 {{-- check if set and not empty --}}
                 <div class="inputs">
-                    <label for="membership">Select a membership type:
+                    <label for="membership_id">Select a membership type:
                         @if (isset($member->membership->type) && !empty(($member->membership->type)))
                             <strong><br>Current membership: {{ $member->membership->type }}</strong>
                         @else
                             <strong><br>No data stored</strong>
                         @endif
-                        <select name="membership" id="membership">
+                        <select name="membership_id" id="membership">
                             <option value="3" selected disabled hidden>Select</option>
                             <option value="1">Monthly £14.99</option>
                             <option value="2">Yearly £99.99</option>

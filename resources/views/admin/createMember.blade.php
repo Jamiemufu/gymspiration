@@ -21,13 +21,13 @@
             <form method="POST" action="{{ route('storeMember') }}">
                 @csrf
                 <div class="inputs">
-                    <label for="firstname">Firstname: (*required)
-                        <input type="text" name="firstname" required autofocus>
+                    <label for="firstName">Firstname: (*required)
+                        <input type="text" name="firstName" required autofocus>
                     </label>
                 </div>
                 <div class="inputs">
-                    <label for="lastname">Lastname: (*required)
-                        <input type="text" name="lastname" required>
+                    <label for="lastName">Lastname: (*required)
+                        <input type="text" name="lastName" required>
                     </label>
                 </div>
                 <div class="inputs">
@@ -36,8 +36,8 @@
                     </label>
                 </div>
                 <div class="inputs">
-                    <label for="phone_number">Phone Number:
-                        <input type="number" name="phone_number">
+                    <label for="phone">Phone Number:
+                        <input type="number" name="phone">
                     </label>
                 </div>
                 <div class="inputs">
@@ -71,13 +71,13 @@
                     </label>
                 </div>
                 <div class="inputs">
-                    <label for="dob">Date of Birth:
-                        <input type="date" name="dob">
+                    <label for="DOB">Date of Birth:
+                        <input type="date" name="DOB">
                     </label>
                 </div>
                 <div class="inputs">
-                    <label for="membership">Select a membership type: (yearly/monthly)
-                        <select name="membership" id="membership">
+                    <label for="membership_id">Select a membership type: (yearly/monthly)
+                        <select name="membership_id" id="membership">
                             <option value="3" selected disabled hidden>Select</option>
                             <option value="1">Monthly £14.99</option>
                             <option value="2">Yearly £99.99</option>

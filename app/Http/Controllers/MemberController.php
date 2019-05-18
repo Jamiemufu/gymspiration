@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ValidateMember;
 
 class MemberController extends Controller {
 
@@ -42,35 +43,14 @@ class MemberController extends Controller {
 	 * @param  \Illuminate\Http\Request  $request
 	 * @return \Illuminate\Http\Response
 	 */
-	public function store(Request $request) {
+	public function store(ValidateMember $request) {
+
 		//validate post
-		$validatedData = $request->validate([
-			'firstname' => 'required|min:3|max:100',
-			'lastname' => 'required|min:3|max:100',
-			'email' => 'required|email',
-			'address_line_1' => 'required|min:2',
-			'address_line_1' => 'min:2',
-			'town' => 'required|min:2',
-			'county' => 'required|min:2',
-			'postcode' => 'required|min:4',
-			'membership' => 'integer',
-		]);
-
-		//store member
-		$member = new \App\Member;
-
-		$member->firstName = $request->firstname;
-		$member->lastName = $request->lastname;
-		$member->email = $request->email;
-		$member->address_line_1 = $request->address_line_1;
-		$member->address_line_2 = $request->address_line_2;
-		$member->town = $request->town;
-		$member->county = $request->county;
-		$member->postcode = $request->postcode;
-		$member->phone = $request->phone;
-		$member->DOB = $request->dob;
-		$member->membership_id = $request->membership;
-
+		$validated = $request->validated();
+		//new member instance
+		$member =  new \App\Member;
+		//fill with validated
+		$member->fill($validated);
 		$member->save();
 
 		return redirect()->route('dashboard')->with('status', 'Member created succesfully!');
@@ -85,6 +65,7 @@ class MemberController extends Controller {
 	 * @return void
 	 */
 	public function search(Request $request) {
+
 		//get value from input
 		$name = $request->input('search');
 		// use value and get return
@@ -126,35 +107,14 @@ class MemberController extends Controller {
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function update(Request $request, $id) {
+	public function update(ValidateMember $request, $id) {
+
 		//validate post
-		$validatedData = $request->validate([
-			'firstname' => 'required|min:3|max:100',
-			'lastname' => 'required|min:3|max:100',
-			'email' => 'required|email',
-			'address_line_1' => 'required|min:2',
-			'address_line_1' => 'min:2',
-			'town' => 'required|min:2',
-			'county' => 'required|min:2',
-			'postcode' => 'required|min:4',
-			'membership' => 'integer',
-		]);
-
-		//store member
-		$member = \App\Member::find($id);
-
-		$member->firstName = $request->firstname;
-		$member->lastName = $request->lastname;
-		$member->email = $request->email;
-		$member->address_line_1 = $request->address_line_1;
-		$member->address_line_2 = $request->address_line_2;
-		$member->town = $request->town;
-		$member->county = $request->county;
-		$member->postcode = $request->postcode;
-		$member->phone = $request->phone_number;
-		$member->DOB = $request->dob;
-		$member->membership_id = $request->membership;
-
+		$validated = $request->validated();
+		//new member instance
+		$member =  \App\Member::find($id);
+		//fill with validated
+		$member->fill($validated);
 		$member->update();
 
 		return redirect()->route('viewMember')->with('status', 'Member updated succesfully!');
