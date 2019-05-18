@@ -43,7 +43,7 @@ Route::get('/admin/reports/', 'AdminController@reports')->name('reports');
 Route::get('/admin/reports/members/all', 'AdminController@exportAllMembers')->name('exportMembers');
 Route::get('/admin/reports/members/month', 'AdminController@exportMonthType')->name('exportMonthType');
 Route::get('/admin/reports/members/year', 'AdminController@exportYearlyType')->name('exportYearlyType');
-Route::any('/admin/reports/members/monthly/', 'AdminController@exportMonthlyMembers')->name('exportMonthlyMembers');
-Route::any('/admin/reports/members/monthly/download', 'AdminController@exportMonthlyMembers');
+Route::get('/admin/reports/members/monthly/download', 'AdminController@exportMonthlyMembers')->name('exportMonthlyMembers');
+Route::post('/admin/reports/members/monthly', 'AdminController@exportMonthlyMembers');
 //user route
 Route::get('/', 'HomeController@index');

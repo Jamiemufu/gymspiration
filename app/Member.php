@@ -25,11 +25,6 @@ class Member extends Authenticatable {
 		'password', 'remember_token',
 	];
 
-	/**
-	 * The attributes that should be cast to native types.
-	 *
-	 * @var array
-	 */
 
 	/**
 	 * @return mixed
@@ -62,5 +57,8 @@ class Member extends Authenticatable {
 
 		return false;
 	}
+
+
+
 
 }
