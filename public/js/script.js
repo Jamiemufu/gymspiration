@@ -248,7 +248,7 @@ function showSideBarActive() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/jamieevans/Documents/gymspiration/resources/js/script.js */"./resources/js/script.js");
+module.exports = __webpack_require__(/*! D:\Web_Dev\gym\resources\js\script.js */"./resources/js/script.js");
 
 
 /***/ })
