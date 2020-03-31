@@ -21,3 +21,5 @@ Clone Repostiory into suitable directory
 **notes**
 
 Member roles are not set yet with new member, as they don't login there is no requirement to do so, however it is there ready to implement with a mutli-auth.
+
+FOR DEMO UsERNAME admin Password: password
